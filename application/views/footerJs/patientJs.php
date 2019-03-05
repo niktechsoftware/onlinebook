@@ -16,6 +16,9 @@
         <script src="<?php echo base_url()?>assets/js/pages/form-elements.js"></script>
         
 <script>
+
+
+
 jQuery(document).ready(function() {
 	$("#dob").change(function(){
 		var birth = $("#dob").val();
@@ -130,6 +133,9 @@ function set_item(item) {
 		}
 	});
 }
+
+						
+
 
 
 </script>
