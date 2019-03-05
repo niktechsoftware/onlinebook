@@ -14,7 +14,7 @@
 										Customer Name/ID  <span class="symbol required"></span>
 									</label>
 									<div class="col-sm-10">
-	                                    <input type="text" class="form-control"  id="country_id" onkeyup="autocomplet()" placeholder="Customer Name/ID" required="required" />
+	                                    <input type="text" class="form-control"  id="country_id" onkeyup="autocomplet()" placeholder="Customer Name/ID" name="CustomerName" required="required" />
 	                                    <ul style="list-style: none; padding:0px;" id="country_list_id"></ul>
 	                                </div>	
 								</div>

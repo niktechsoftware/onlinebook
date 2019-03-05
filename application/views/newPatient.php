@@ -114,7 +114,7 @@
 										GST NO. <span class="symbol required"></span>
 									</label>
 									<div class="col-sm-7">
-										<input type="text" class="form-control" id="weight" name="gst" placeholder="Enter GST Number"  >
+										<input type="text" class="form-control" id="gst" name="gst" placeholder="Enter GST Number" style='text-transform:uppercase' >
 									</div>
 								</div>
 								</div>

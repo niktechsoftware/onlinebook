@@ -18,7 +18,7 @@
 			                                        <div class="form-group">
 			                                            <label class="col-sm-2 control-label"><strong>Class Name</strong></label>
 			                                            <div class="col-sm-4">
-			                                            	<input type="hidden" value="<?php echo $this->uri->segment(4);?>" name="id">
+			                                            	<input type="hidden" id=clasName value="<?php echo $this->uri->segment(4);?>" name="id">
 			                                               
 			                                             <select class="form-control m-b-sm" id="gender" name="className" required="required">
 															<option value="">-Select Class-</option>

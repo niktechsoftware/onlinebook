@@ -36,11 +36,11 @@ class Patient extends CI_Controller{
 	}
 	function searchNewPatient(){
 		
-		$data['subPage'] = 'Patient';
-		$data['smallTitle'] = 'Search or New Patient';
-		$data['pageTitle'] = 'Search or New Patient';
+		$data['subPage'] = 'Customer';
+		$data['smallTitle'] = 'Search or New Customer';
+		$data['pageTitle'] = 'Search or New Customer';
 				
-		$data['title'] = 'Pain Clinic | Search/New Patient';
+		$data['title'] = 'Search/New Customer';
 		$data['headerCss'] = 'headerCss/patientCss';
 		$data['footerJs'] = 'footerJs/patientJs';
 		$data['mainContent'] = 'newPatient';
@@ -343,9 +343,9 @@ class Patient extends CI_Controller{
 	}
 	
 	function patientHistory(){
-		$data['subPage'] = 'Patient';
-		$data['smallTitle'] = 'Patient History';
-		$data['pageTitle'] = 'Patient History';
+		$data['subPage'] = 'Customer';
+		$data['smallTitle'] = 'Customer History';
+		$data['pageTitle'] = 'Customer History';
 		
 		$data['title'] = 'Pain Clinic | Treatement';
 		$data['headerCss'] = 'headerCss/patientCss';

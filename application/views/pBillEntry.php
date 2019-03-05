@@ -100,7 +100,7 @@
 						
 							<div class="col-sm-5">
 								<label class="col-sm-5 control-label">
-								State code: <span class="symbol required"></span>
+								Pin code: <span class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
 									<input type="text" class="form-control" id="code" name="stcode" required="required" />

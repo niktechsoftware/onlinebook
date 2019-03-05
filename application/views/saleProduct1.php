@@ -124,10 +124,13 @@
 	                       </tr>
 	                       <script>
 	                       $("#item_quantity<?php echo $i;?>").keyup(function(){
+	                       					var value = $(this).val();
+					  						value = value.replace(/[^(0-9)]*/g, "");
+					  						$(this).val(value);
+
 											var st = $("#item_quantity<?php echo $i;?>").val();
 											var count=<?php echo $i;?>;
-											
-										
+
 											var pr = Number($('#item_price<?php echo $i; ?>').val());
 											var vatper = Number($('#vat<?php echo $i;?>').val());
 											var satper = Number($('#sat<?php echo $i;?>').val());
