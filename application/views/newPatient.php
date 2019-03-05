@@ -64,7 +64,7 @@
 											<option value="">-Select Gender-</option>
 											<option value="Male">Male</option>
 											<option value="Female">Female</option>
-											<option value="company">Company</option>
+											<option value="company">Other</option>
 										</select>
 									</div>
 								</div>
@@ -142,7 +142,7 @@
 									</div>
 								</div>
 							</div>
-							 -->
+							 Patient-->
 					</div>
 					<div class="form-group">
 						<div class="form-group">

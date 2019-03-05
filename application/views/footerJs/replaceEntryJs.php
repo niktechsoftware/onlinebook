@@ -138,4 +138,45 @@ function getAge(birth) {
     
     $("#age").val(age + " Years, " + age_month + " Month, " + age_day + " Days");
 }
+
+ function digitvalidation()
+     {
+       var text_value = document.getElementById("mobile").value;
+          if (!text_value.match(/[0-9]$/))
+             {
+                document.getElementById("pin").innerHTML = "Invalid Mobile Number";
+                    if(text_value=="")
+                      {
+                            document.getElementById("pin").innerHTML = " ";
+                      }
+             }
+    }
+
+	 function digitvalidation1()
+     {
+       var text_value = document.getElementById("weight").value;
+          if (!text_value.match(/[0-9]$/))
+             {
+                document.getElementById("pin1").innerHTML = "Invalid Phone Number";
+                    if(text_value=="")
+                      {
+                            document.getElementById("pin1").innerHTML = " ";
+                      }
+             }
+    }
+
+		 function digitvalidation3()
+     {
+       var text_value = document.getElementById("productAmount").value;
+          if (!text_value.match(/[0-9]$/))
+             {
+                document.getElementById("pin3").innerHTML = "Invalid Amount";
+                    if(text_value=="")
+                      {
+                            document.getElementById("pin3").innerHTML = " ";
+                      }
+             }
+    }
+
+
 </script>
