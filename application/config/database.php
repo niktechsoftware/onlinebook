@@ -50,9 +50,11 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 
+
 // $db['default']['username'] = 'gfincuct_book';
 // $db['default']['password'] = 'Rahul!123singh';
 // $db['default']['database'] = 'gfincuct_onlinebook';
+
 
 $db['default']['username'] = 'root';
 $db['default']['password'] = '';

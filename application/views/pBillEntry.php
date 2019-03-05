@@ -62,7 +62,7 @@
 									Dealer Mobile 1  <span class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="mobile1" name="mobile1" >
+									<input type="text" class="form-control" id="mobile" name="mobile" pattern="[0-9]" onkeyup="digitvalidation()" ><span id="pin"></span>
 								</div>
 								
 							</div>
@@ -71,7 +71,7 @@
 									Dealer Mobile 2  <span class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="mobile2" name="mobile2"  >
+									<input type="text" class="form-control" id="mobile2" name="mobile2" onkeyup="digitvalidation2()" pattern="[0-9]" ><span id="pin2"></span>
 								</div>
 								
 							</div>
@@ -103,7 +103,7 @@
 								Pin code: <span class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="code" name="stcode" required="required" />
+									<input type="number" class="form-control" id="code" name="stcode" required="required" />
 								</div>
 							</div>
 							<div class="col-sm-5">
@@ -120,7 +120,7 @@
 								Total Product Quantity  <span class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="product_quantity" name="product_quantity" required="required" />
+									<input type="text" class="form-control" id="product_quantity" name="product_quantity" required="required" onkeyup="digitvalidation3()" pattern="[0-9]" ><span id="pin3"></span>
 								</div>
 							</div>
 							
@@ -144,7 +144,7 @@
 									Enter CGST (%) <span class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="vatper" name="vatper"  >
+									<input type="number" step="0.01" class="form-control" id="vatper" name="vatper"  >
 								</div>
 							</div>
 							<div class="col-sm-5">
@@ -152,7 +152,7 @@
 									Enter SGST/UTGST(%)  <span class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="satper" name="satper"   >
+									<input type="number" step="0.01" class="form-control" id="satper" name="satper"   >
 								</div>
 								
 							</div>
@@ -182,7 +182,7 @@
 									Discount  <span class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="discount" name="discount"  >
+									<input type="number" step="0.01" class="form-control" id="discount" name="discount"  >
 								</div>
 							</div>
 						<div class="col-sm-5">
@@ -190,7 +190,7 @@
 									Total Bill Amount  <span class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="total_prize" name="total_prize"  required="required" >
+									<input type="number" step="0.01" class="form-control" id="total_prize" name="total_prize"  required="required" >
 								</div>
 							</div>
 						</div>
@@ -203,7 +203,7 @@
 									Paid Amount  <span class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="amount_paid" name="amount_paid"  required="required" >
+									<input type="number" step="0.01" class="form-control" id="amount_paid" name="amount_paid"  required="required" >
 								</div>
 							</div>
 							<div class="col-sm-5">
@@ -228,7 +228,7 @@
 									Balance 
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="balance"  name="balance" >
+									<input type="number" step="0.01" class="form-control" id="balance"  name="balance" >
 								</div>
 							</div>
 							<div class="col-sm-5">

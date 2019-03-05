@@ -16,6 +16,8 @@
         <script src="<?php echo base_url()?>assets/js/pages/form-elements.js"></script>
         
 <script>
+
+
 	
 			jQuery(document).ready(function() {
 
@@ -65,6 +67,114 @@
 				
 				
 				});
-
+								 function digitvalidation()
+     {
+       var text_value = document.getElementById("mobile").value;
+          if (!text_value.match(/[0-9]$/))
+             {
+                document.getElementById("pin").innerHTML = "Invalid Mobile Number";
+                    if(text_value=="")
+                      {
+                            document.getElementById("pin").innerHTML = " ";
+                      }
+             }
+    }
+										 function digitvalidation2()
+     {
+       var text_value = document.getElementById("mobile2").value;
+          if (!text_value.match(/[0-9]$/))
+             {
+                document.getElementById("pin2").innerHTML = "Invalid Mobile Number";
+                    if(text_value=="")
+                      {
+                            document.getElementById("pin2").innerHTML = " ";
+                      }
+             }
+    }
+												 function digitvalidation3()
+     {
+       var text_value = document.getElementById("product_quantity").value;
+          if (!text_value.match(/[0-9]$/))
+             {
+                document.getElementById("pin3").innerHTML = "Invalid Quantity Number";
+                    if(text_value=="")
+                      {
+                            document.getElementById("pin3").innerHTML = " ";
+                      }
+             }
+    }
+														 function digitvalidation3()
+     {
+       var text_value = document.getElementById("product_quantity").value;
+          if (!text_value.match(/[0-9]$/))
+             {
+                document.getElementById("pin3").innerHTML = "Invalid Quantity Number";
+                    if(text_value=="")
+                      {
+                            document.getElementById("pin3").innerHTML = " ";
+                      }
+             }
+    }
+														 function digitvalidation3()
+     {
+       var text_value = document.getElementById("product_quantity").value;
+          if (!text_value.match(/[0-9]$/))
+             {
+                document.getElementById("pin3").innerHTML = "Invalid Quantity Number";
+                    if(text_value=="")
+                      {
+                            document.getElementById("pin3").innerHTML = " ";
+                      }
+             }
+    }
+														 function digitvalidation3()
+     {
+       var text_value = document.getElementById("product_quantity").value;
+          if (!text_value.match(/[0-9]$/))
+             {
+                document.getElementById("pin3").innerHTML = "Invalid Quantity Number";
+                    if(text_value=="")
+                      {
+                            document.getElementById("pin3").innerHTML = " ";
+                      }
+             }
+    }
+														 function digitvalidation3()
+     {
+       var text_value = document.getElementById("product_quantity").value;
+          if (!text_value.match(/[0-9]$/))
+             {
+                document.getElementById("pin3").innerHTML = "Invalid Quantity Number";
+                    if(text_value=="")
+                      {
+                            document.getElementById("pin3").innerHTML = " ";
+                      }
+             }
+    }
+														 function digitvalidation3()
+     {
+       var text_value = document.getElementById("product_quantity").value;
+          if (!text_value.match(/[0-9]$/))
+             {
+                document.getElementById("pin3").innerHTML = "Invalid Quantity Number";
+                    if(text_value=="")
+                      {
+                            document.getElementById("pin3").innerHTML = " ";
+                      }
+             }
+    }
+														 function digitvalidation9()
+     {
+       var text_value = document.getElementById("product_quantity").value;
+          if (!text_value.match(/[0-9]$/))
+             {
+                document.getElementById("pin9").innerHTML = "Invalid Quantity Number";
+                    if(text_value=="")
+                      {
+                            document.getElementById("pin9").innerHTML = " ";
+                      }
+             }
+    }
+	
 			
 		</script>
