@@ -91,8 +91,9 @@
 <body>
 
 	<div id="page-wrap">
-
-		<textarea id="header">SALE INVOICE</textarea>
+		
+		<textarea id="header" style="height:95px; color:black; font-size:25px; letter-spacing:5px;">SALE INVOICE</textarea>
+		
 		<table style="width: 100%" class='tba'>
 			<tr>
 				<td  style="border: none;">

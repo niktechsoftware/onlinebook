@@ -199,6 +199,7 @@ class Home extends CI_Controller{
 												//alert(edate+","+section+","+classv+","+sdate)
 												$.post("<?php echo site_url("index.php/apanel/getSubject") ?>",{classid : classid}, function(data){
 												$("#itemCompanyName<?php echo $i; ?>").html(data);
+												//console.log(data);
 													});
 											});
 						                     
@@ -210,11 +211,28 @@ class Home extends CI_Controller{
 						                    <td><input type='text' class='form-control' id='unitPrice<?php echo $i; ?>' name='unitPrice<?php echo $i; ?>'  width='100%'></td>
 						                    <td><input type='text' class='form-control'  id='itemQuantity<?php echo $i; ?>' name='itemQuantity<?php echo $i; ?>'  width='100%'></td>
 						                    
-						                      <script>
-        											$("#itemCompanyName<?php echo $i; ?>").change(function(){
+						                      <script>//console.log("HII");
+        										$("#itemCompanyName<?php echo $i; ?>").change(function(){
+														
         												var classid = $("#hsn_sac<?php echo $i; ?>").val();
         												var subjectid = $("#itemCompanyName<?php echo $i; ?>").val();
         												var itamName = $("#itemName<?php echo $i; ?>").val();
+														//console.log(classid);
+														console.log(subjectid);
+														console.log(itamName);
+														if(subjectid==itamName){
+															var a="subject name and book name should not be same";
+															console.log(a);
+															document.getElementById("msz").innerHTML=a;
+															//$("#msz").html(a);
+															}
+														else{
+														// <?php// if(var classid==var itamName)
+														// { 
+														// 	echo "not submitted";
+														// }
+														// else
+														// {?>
         												
         												//alert(edate+","+section+","+classv+","+sdate)
         												$.post("<?php echo site_url("index.php/apanel/getTotQ") ?>",{classid : classid, subjectid : subjectid, itamName : itamName }, function(data){
@@ -227,7 +245,10 @@ class Home extends CI_Controller{
         												    $("#unitPrice<?php echo $i; ?>").val(response.otherData[0].pRate);
         												
         												});
+														
+														}
         											});
+													<?php //} ?>
 						                     
 						                     </script>   
 						                    <td><input type='text' class='form-control'  id='extraQuantity<?php echo $i; ?>' name='extraQuantity<?php echo $i; ?>'  width='100%'></td>
@@ -446,7 +467,7 @@ class Home extends CI_Controller{
 
 							</script>
 							  </tbody>
-						    </table>
+						    </table><div id="msz" style="color:red;"></div>
 						 </div><?php 
 	}
 	
