@@ -69,7 +69,7 @@
 											<option value="">-Select Gender-</option>
 											<option value="Male">Male</option>
 											<option value="Female">Female</option>
-											<option value="company">Company</option>
+											<option value="company">Other</option>
 										</select>
 									</div>
 								</div>
@@ -90,18 +90,17 @@
 										Mobile Number <span class="symbol required"></span>
 									</label>
 									<div class="col-sm-7">
-										<input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" required="required" />
+										<input type="text" class="form-control" id="mobile" name="mobile" pattern="[0-9]" onkeyup="digitvalidation()" placeholder="Mobile Number" required="required" /><span id="pin"></span>
 									</div>
 								</div>
-							</div>	
-								
+							</div>
 							<div class="form-group">
 								<div class="col-sm-5">
 									<label class="col-sm-5 control-label">
 										Phone Number  <span class="symbol required"></span>
 									</label>
 									<div class="col-sm-7">
-										<input type="text" class="form-control" id="weight" name="weight" placeholder="Enter Phone Number"  >
+										<input type="text" class="form-control" id="weight" name="weight" placeholder="Enter Phone Number" pattern="[0-9][+]" onkeyup="digitvalidation1()"><span id="pin1"></span>
 									</div>
 								</div>
 								<div class="col-sm-5">
@@ -167,7 +166,7 @@
 										Product Amount <span class="symbol required"></span>
 									</label>
 									<div class="col-sm-7">
-										<input type="text" class="form-control" id="productAmount" name="productAmount" placeholder="Enter product Amount"/>
+										<input type="text" class="form-control" id="productAmount" name="productAmount" placeholder="Enter product Amount" onkeyup="digitvalidation3()" pattern=[0-9]><span id="pin3"></span>
 									</div>
 								</div>
 							</div>

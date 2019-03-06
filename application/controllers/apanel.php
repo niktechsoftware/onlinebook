@@ -136,7 +136,7 @@ class Apanel extends CI_Controller{
 		?><option value="">-Select Subject-</option>
 											<?php 
 											foreach($vt->result() as $v):?>
-											<option value="<?php echo $v->id;?>"><?php echo $v->booksubject;?></option>
+											<option value="<?php echo $v->booksubject;?>"><?php echo $v->booksubject;?></option>
 											<?php endforeach;
 	}
 	

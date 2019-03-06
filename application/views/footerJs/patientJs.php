@@ -16,6 +16,9 @@
         <script src="<?php echo base_url()?>assets/js/pages/form-elements.js"></script>
         
 <script>
+
+
+
 jQuery(document).ready(function() {
 	$("#dob").change(function(){
 		var birth = $("#dob").val();
@@ -27,7 +30,49 @@ jQuery(document).ready(function() {
 		$.post("<?php echo site_url("patient/basic");?>", {id : id}, function(data){
 			$("#basic").code(data);
 		});
-	});	
+	});
+    //customer ID
+    $('[id="country_id"]').keyup(function() {
+                      var value = $(this).val();
+                      value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
+                      $(this).val(value);
+                    });	
+    // customer Name
+    $('[id="p_name"]').keyup(function() {
+                      var value = $(this).val();
+                      value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z)]*/g, "");
+                      $(this).val(value);
+                    });
+    //  Customer address
+    $('[name="address"]').keyup(function() {
+                      var value = $(this).val();
+                      value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9./ )]*/g, "");
+                      $(this).val(value);
+                    });
+    // Customer Mobile Number
+    $('[id="mobile"]').keyup(function() {
+                      var value = $(this).val();
+                      value = value.replace(/[^(0-9)]*/g, "");
+                      $(this).val(value);
+                    });
+    // Customer phone number
+    $('[id="weight"]').keyup(function() {
+                      var value = $(this).val();
+                      value = value.replace(/[^(0-9)]*/g, "");
+                      $(this).val(value);
+                    });
+    // Customer TIN Number
+    $('[id="bp"]').keyup(function() {
+                      var value = $(this).val();
+                      value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
+                      $(this).val(value);
+                    });
+    // Customer GST Number
+    $('[id="gst"]').keyup(function() {
+                      var value = $(this).val();
+                      value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
+                      $(this).val(value);
+                    });
 });
 
 function autocomplet() {
@@ -130,6 +175,9 @@ function set_item(item) {
 		}
 	});
 }
+
+						
+
 
 
 </script>

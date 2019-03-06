@@ -64,7 +64,7 @@
 											<option value="">-Select Gender-</option>
 											<option value="Male">Male</option>
 											<option value="Female">Female</option>
-											<option value="company">Company</option>
+											<option value="company">Other</option>
 										</select>
 									</div>
 								</div>
@@ -114,7 +114,7 @@
 										GST NO. <span class="symbol required"></span>
 									</label>
 									<div class="col-sm-7">
-										<input type="text" class="form-control" id="weight" name="gst" placeholder="Enter GST Number"  >
+										<input type="text" class="form-control" id="gst" name="gst" placeholder="Enter GST Number" style='text-transform:uppercase' >
 									</div>
 								</div>
 								</div>
@@ -142,7 +142,7 @@
 									</div>
 								</div>
 							</div>
-							 -->
+							 Patient-->
 					</div>
 					<div class="form-group">
 						<div class="form-group">

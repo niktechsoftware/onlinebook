@@ -11,7 +11,7 @@
 								<strong>Bill Number</strong><span class="symbol required"></span>
 							</label>
 							<div class="col-sm-4">
-								<input class="form-control" value="<?php echo $this->uri->segment(4);?>" placeholder="Please Enter Bill Number" type="text" name="billNo"/>
+								<input class="form-control" id="billno" value="<?php echo $this->uri->segment(4);?>" placeholder="Please Enter Bill Number" type="text" name="billNo"/>
 							</div>
 							<div class="col-sm-4">
 								<input class="btn btn-success" value="Get Bill" type="submit" />

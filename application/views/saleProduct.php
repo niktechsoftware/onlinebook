@@ -124,6 +124,9 @@
 	                       </tr>
 	                       <script>
 	                       $("#item_quantity<?php echo $i;?>").keyup(function(){
+	                       					var value = $(this).val();
+					  						value = value.replace(/[^(0-9)]*/g, "");
+					  						$(this).val(value);
 											var st = $("#item_quantity<?php echo $i;?>").val();
 											var count=<?php echo $i;?>;
 										

@@ -25,6 +25,11 @@
 						$("#reply").html(data);
 					});
 				});
+				$("#billNo").keyup(function() {
+					  var value = $(this).val();
+					  value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
+					  $(this).val(value);
+					});
 			    	
 					
 				<?php $i = 1; for($i = 1; $i<=30; $i++){ ?>
@@ -42,20 +47,20 @@
 
 					<?php if($i != 4){?>
 						$('#del<?php echo $i; ?>').click(function(){
-							$("#row<?php echo $i;?>").hide();
-							$("#add<?php echo $i-1;?>").show();
-							$("#del<?php echo $i-1;?>").show();
-							$('#item_name<?php echo $i; ?>').val("");
-							$('#item_comp<?php echo $i; ?>').val("");
-							$('#item_size<?php echo $i; ?>').val("");
-							$('#item_price<?php echo $i; ?>').val("");
-							$('#unit<?php echo $i; ?>').val("");
-							$('#total_price<?php echo $i; ?>').val("");
-							$('#sub_total<?php echo $i; ?>').val("");
-							$('#discount<?php echo $i; ?>').val("");
-							$('#item_quantity<?php echo $i; ?>').val("");
-							$('#item_discount<?php echo $i; ?>').val("");
-							$('select#item_no<?php echo $i; ?> option[value=""]').attr("selected",true);
+						$("#row<?php echo $i;?>").hide();
+						$("#add<?php echo $i-1;?>").show();
+						$("#del<?php echo $i-1;?>").show();
+						$('#item_name<?php echo $i; ?>').val("");
+						$('#item_comp<?php echo $i; ?>').val("");
+						$('#item_size<?php echo $i; ?>').val("");
+						$('#item_price<?php echo $i; ?>').val("");
+						$('#unit<?php echo $i; ?>').val("");
+						$('#total_price<?php echo $i; ?>').val("");
+						$('#sub_total<?php echo $i; ?>').val("");
+						$('#discount<?php echo $i; ?>').val("");
+						$('#item_quantity<?php echo $i; ?>').val("");
+						$('#item_discount<?php echo $i; ?>').val("");
+						$('select#item_no<?php echo $i; ?> option[value=""]').attr("selected",true);
 						});
 					<?php }?>
 					
@@ -129,9 +134,7 @@
 						var name1 = $('#total').val();
 						var a = name1 - name;				
 						document.getElementById('balance').value=a;
-					});	
-
-				
+					});			
 
 				
 				});

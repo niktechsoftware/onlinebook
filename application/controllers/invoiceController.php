@@ -234,7 +234,6 @@ class InvoiceController extends CI_Controller{
 		$data['footerJs'] = "footerJs/editBillJs";
 		
 		
-		
 		$this->db->where("bill_no",$billNo);
 		$billDetail = $this->db->get("product_sale");
 		

@@ -30,7 +30,25 @@ jQuery(document).ready(function() {
 		$.post("<?php echo site_url("patient/basic");?>", {id : id}, function(data){
 			$("#basic").code(data);
 		});
-	});	
+	});
+	// Selest Class 					
+	$('[id="clasName"]').keyup(function() {
+					  var value = $(this).val();
+					  value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
+					  $(this).val(value);
+					});
+	//Select Subject
+	$('[id="input-Default123"]').keyup(function() {
+					  var value = $(this).val();
+					  value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
+					  $(this).val(value);
+					});
+	//customer ID of Get Record
+    $('[name="CustomerName"]').keyup(function() {
+                      var value = $(this).val();
+                      value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
+                      $(this).val(value);
+                    });
 });
 
 function autocomplet() {
