@@ -7,7 +7,7 @@ class Account extends CI_Controller{
 		$balance = $this->input->post("balance");
 		
 		$n = 1000 + $this->invoice_serial->graterId();
-		$invoice_no = "PCV".$n;
+		$invoice_no = "RD".$n;
 		
 		$clbalance = $balance - $paid;
 		
