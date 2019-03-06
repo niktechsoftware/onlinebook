@@ -11,6 +11,8 @@ class Account extends CI_Controller{
 		
 		$clbalance = $balance - $paid;
 		
+		
+		
 		$in = array(
 				"invoice_no" => $invoice_no,
 				"reason" => $reason,
