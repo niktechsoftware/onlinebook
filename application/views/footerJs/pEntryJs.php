@@ -27,6 +27,8 @@
 			    	source: '<?php echo site_url("ajaxSale/getEnterbilldata/?");?>',
 			    	close: function(){
 						var name = $("#companyName").val();
+            name = name.replace(/\D/g, "").split(/(?:([\d]{4}))/g).filter(s => s.length > 0).join("");
+            $(this).val(name);
 						$.post("<?php echo site_url("ajaxSale/enterCompanyName") ?>",{name : name}, function(data){
 							var d = jQuery.parseJSON(data);
 							$("#msg").html(d.msg);
@@ -35,16 +37,18 @@
 							$("#mobile1").val(d.dealar_mobile1);
 							$("#mobile2").val(d.dealar_mobile1);
 							$("#tin").val(d.tin_no);
+
+
+            name = name.replace(/\D/g, "").split(/(?:([\d]{4}))/g).filter(s => s.length > 0).join("");
+            $(this).val(name);
 						
 						
 						});
-					}
+					 }
 			    });
 				
 				
 			
-				
-				
 				$('input#amount_paid').keyup(function(){
 					var total_prize = Number($('#total_prize').val());
 					var amount_paid = Number($('#amount_paid').val());

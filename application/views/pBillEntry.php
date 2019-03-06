@@ -33,7 +33,7 @@
 									<input type="text" class="form-control" id="companyName" name="companyName" required="required" />
 								</div>	
 							</div>
-						
+						 
 						</div>
 						
 						<div class="form-group">

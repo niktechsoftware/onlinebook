@@ -25,12 +25,7 @@
 						$("#reply").html(data);
 					});
 				});
-				$("#billNo").keyup(function() {
-					  var value = $(this).val();
-					  value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
-					  $(this).val(value);
-					});
-			    	
+				    	
 					
 				<?php $i = 1; for($i = 1; $i<=30; $i++){ ?>
 

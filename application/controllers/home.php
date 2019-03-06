@@ -492,7 +492,7 @@ class Home extends CI_Controller{
 		$data['headerCss'] = "headerCss/listCss";
 		$data['footerJs'] = "footerJs/listJs";
 		$data['pBillInfo'] = $this->bill_info->getAll();
-		$this->load->view("include/template",$data);
+		$this->load->view("include/template",$data); 
 	}
 	
 	function sBillHistory(){
