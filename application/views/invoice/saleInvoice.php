@@ -92,7 +92,7 @@
 
 	<div id="page-wrap">
 		
-		<textarea id="header" style="height:95px; color:black; font-size:25px; letter-spacing:5px;">SALE INVOICE</textarea>
+		<textarea id="header" style="height:35px; color:black; font-size:25px; letter-spacing:5px;">SALE INVOICE</textarea>
 		
 		<table style="width: 100%" class='tba'>
 			<tr>
@@ -189,9 +189,7 @@
                 </tr>
             </table>
             </div>
-           <br>
-            <br>
-             <br>
+          
 					<div  style="margin-left:180px;"></br></br></br>
 						<h2 style="border: 0px solid #000; padding: 4px; width: 200px; margin-left:150px;">
 							ESTIMATE
@@ -236,7 +234,7 @@
 		     
 		    <td style="border: 1px solid #000;">
 		      	<?php 
-		      	 $subject = $this->db->query('SELECT `booksubject` FROM `booksubject` WHERE `id`='.$row->company_name.';')->row();
+		      	 $subject = $this->db->query('SELECT `booksubject` FROM `booksubject` WHERE `bookclass_id`='.$row->hsn_sac.';')->row();
 		      		echo $row->item_name;
 		      		
 		      		

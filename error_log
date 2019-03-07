@@ -29,3 +29,5 @@
 [08-Dec-2018 13:42:09 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '}' in /home3/gfincuct/public_html/ramdootedu.com/onlinebook/application/controllers/patient.php on line 406
 [09-Jan-2019 21:29:33 Asia/Calcutta] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home3/gfincuct/public_html/ramdootedu.com/onlinebook/application/controllers/ajaxSale.php on line 312
 [05-Mar-2019 05:41:15 Asia/Calcutta] PHP Fatal error:  Call to a member function uri() on a non-object in /home3/gfincuct/public_html/ramdootedu.com/onlinebook/application/controllers/billC.php on line 30
+[07-Mar-2019 13:51:13 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '$' in /home3/gfincuct/public_html/ramdootedu.com/onlinebook/application/controllers/home.php on line 238
+[07-Mar-2019 13:51:20 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '$' in /home3/gfincuct/public_html/ramdootedu.com/onlinebook/application/controllers/home.php on line 238

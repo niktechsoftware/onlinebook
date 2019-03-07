@@ -43,7 +43,7 @@
 
 				$("#ref").change(function(){
 					var classID = $("#ref").val();
-					alert(classID);
+					//alert(classID);
 					
 					$.post("<?php echo site_url("home/getSubjects") ?>", {classID : classID}, function(data){
 					    console.log(data)
@@ -143,6 +143,30 @@
 							$('#item_quantity<?php echo $i; ?>').val("");
 							$('#item_discount<?php echo $i; ?>').val("");
 							$('select#item_no<?php echo $i; ?> option[value=""]').attr("selected",true);
+							for($i = 1; $i<=30; $i++){
+							var value = $(this).val();
+	  						value = value.replace(/[^(0-9)]*/g, "");
+	  						$(this).val(value);
+							var st = $("#item_quantity<?php echo $i;?>").val();
+							var count=<?php echo $i;?>;
+						
+							var pr = Number($('#item_price<?php echo $i; ?>').val());
+							var vatper = Number($('#vat<?php echo $i;?>').val());
+							var satper = Number($('#sat<?php echo $i;?>').val());
+							var dis = $('#discount<?php echo $i;?>').val();
+							var totalamount= st*pr;
+							var sat = (totalamount*satper)/100;
+							var vat = (totalamount*vatper)/100;
+							var bal = totalamount + sat + vat- dis;
+							$("#total_price<?php echo $i;?>").val(bal);
+							$("#sub_total<?php echo $i;?>").val(bal);
+							var totaly=0;
+							<?php for($g=1;$g<$i+1;$g++){?>
+							
+							totaly = totaly + Number($('#sub_total<?php echo $g;?>').val());
+							<?php }?>
+							$("#total").val(totaly);
+							}
 						});
 					<?php }?>
 

@@ -105,11 +105,13 @@ class Home extends CI_Controller{
 	
 	public function getSubjects() {
 	    $classID = $this->input->post("classID");
+	
 	    $copy=21;
-	    $subjects = $this->db->query('SELECT * FROM `enter_stock1` WHERE (`hsn_sac`='.$classID.' or `hsn_sac`='.$copy.')  GROUP BY `name` ORDER BY `sno` DESC;')->result();
+	   
+	    $subjects = $this->db->query('SELECT * FROM `enter_stock1` WHERE (`hsn_sac`= '.$classID.' OR `hsn_sac`= '.$copy.')  GROUP BY `name` ORDER BY `sno` DESC;')->result();
 	    $finalData =  array();
 	    foreach($subjects AS $key => $value):
-	        $subject = $this->db->query('SELECT `booksubject` FROM `booksubject` WHERE `id`='.$value->company_name.';')->row();
+	        $subject = $this->db->query('SELECT `booksubject` FROM `booksubject` WHERE `bookclass_id`='.$value->hsn_sac.';')->row();
 	        
 	       	$queryString = "SELECT SUM(`extraQuantity`) AS `extraQuantity`  FROM `enter_stock1` WHERE `hsn_sac`='".$value->hsn_sac."' AND `name`='".$value->name."' AND `name`='".$value->name."';";
 		    $oldQuantity = $this->db->query($queryString)->result();
@@ -227,13 +229,13 @@ class Home extends CI_Controller{
 															//$("#msz").html(a);
 															}
 														else{
-														// <?php// if(var classid==var itamName)
+														// <?php  // if(var classid==var itamName)
 														// { 
 														// 	echo "not submitted";
 														// }
 														// else
-														// {?>
-        												
+														//{
+        												?>
         												//alert(edate+","+section+","+classv+","+sdate)
         												$.post("<?php echo site_url("index.php/apanel/getTotQ") ?>",{classid : classid, subjectid : subjectid, itamName : itamName }, function(data){
         												    let response = JSON.parse(data);
