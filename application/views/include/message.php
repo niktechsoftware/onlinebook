@@ -85,13 +85,18 @@
                                     </a>
                                     <ul class="dropdown-menu dropdown-list" role="menu">
                                         <li role="presentation"><a href="<?php echo base_url();?>apanel/profile"><i class="fa fa-user"></i>Profile</a></li>
-                                        <li role="presentation"><a href="<?php echo base_url();?>apanel/changePass"><i class="fa fa-key"></i>Change Password</a></li>
+
+                                        <li><a href="<?php echo base_url();?>login/changepass.jsp"><i class="fa fa-key"></i>Change Password</a></li>
+
                                         <li role="presentation"><a href="<?php echo base_url();?>apanel/message"><i class="fa fa-envelope"></i>Inbox<span class="badge badge-success pull-right">4</span></a></li>
+
                                         <li role="presentation" class="divider"></li>
-                                        <li role="presentation"><a href="<?php echo base_url();?>login/lockPage"><i class="fa fa-lock"></i>Lock screen</a></li>
+
+                                        <li><a href="<?php echo base_url();?>login/lockPage"><i class="fa fa-lock"></i>Lock screen</a></li>
+
                                         <li role="presentation"><a href="<?php echo base_url();?>login/logout"><i class="fa fa-sign-out m-r-xs"></i>Log out</a></li>
                                     </ul>
-                                </li>
+                                </li> 
                                 <?php if($this->session->userdata("login_type") == "admin"){?>
                                 <li>
                                     <a href="javascript:void(0);" class="waves-effect waves-button waves-classic" id="showRight">

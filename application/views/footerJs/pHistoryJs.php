@@ -31,7 +31,13 @@ jQuery(document).ready(function() {
 			$("#basic").code(data);
 		});
 	});
-	// Selest Class 					
+	// Typeing Class 					
+	$('[id="input-Default"]').keyup(function() {
+					  var value = $(this).val();
+					  value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
+					  $(this).val(value);
+					});
+	// Select Class 					
 	$('[id="clasName"]').keyup(function() {
 					  var value = $(this).val();
 					  value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");

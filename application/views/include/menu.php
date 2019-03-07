@@ -94,11 +94,10 @@
                         <li class="droplink"><a href="#"><span class="menu-icon icon-globe"></span><p>Activity</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo base_url();?>web/query.jsp">Query/Contact List</a></li>
-                               <li><a href="<?php echo base_url();?>login/changepass.jsp">Change Password</a></li>
-                               <!-- <li><a href="<?php echo base_url();?>login/logout.jsp">Logout</a></li>-->
+                                <li><a href="<?php echo base_url();?>login/changepass.jsp">Change Password</a></li>
                             </ul>
                         </li>
-                         <li class="droplink"><a href="<?php echo base_url();?>login/logout.jsp"><span class="menu-icon icon-globe"></span><p>Logout</p><span class="arrow"></span></a>
+                         <li><a href="<?php echo base_url();?>login/logout.jsp"><span class="fa fa-sign-out m-r-xs"></span><p>Logout</p><span class="arrow"></span></a>
                     </ul>
                 </div><!-- Page Sidebar Inner -->
             </div><!-- Page Sidebar -->

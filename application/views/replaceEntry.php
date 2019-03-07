@@ -67,7 +67,7 @@
 									<div class="col-sm-7">
 										<select class="form-control m-b-sm" id="gender" name="gender" required="required">
 											<option value="">-Select Gender-</option>
-											<option value="Male">Male</option>
+											<option value="Male" selected>Male</option>
 											<option value="Female">Female</option>
 											<option value="company">Other</option>
 										</select>
@@ -90,7 +90,7 @@
 										Mobile Number <span class="symbol required"></span>
 									</label>
 									<div class="col-sm-7">
-										<input type="text" class="form-control" id="mobile" name="mobile" pattern="[0-9]" onkeyup="digitvalidation()" placeholder="Mobile Number" required="required" /><span id="pin"></span>
+										<input type="text" class="form-control" id="mobile" name="mobile" pattern="[0-9]"  placeholder="Mobile Number" required="required" /><span id="pin"></span>
 									</div>
 								</div>
 							</div>
@@ -100,7 +100,7 @@
 										Phone Number  <span class="symbol required"></span>
 									</label>
 									<div class="col-sm-7">
-										<input type="text" class="form-control" id="weight" name="weight" placeholder="Enter Phone Number" pattern="[0-9][+]" onkeyup="digitvalidation1()"><span id="pin1"></span>
+										<input type="text" class="form-control" id="weight" name="weight" placeholder="Enter Phone Number" pattern="[0-9][+]"><span id="pin1"></span>
 									</div>
 								</div>
 								<div class="col-sm-5">
@@ -118,7 +118,7 @@
 										Product for Replace  <span class="symbol required"></span>
 									</label>
 									<div class="col-sm-7">
-										 <input type="text" class="form-control" name="product_name"   placeholder="Product name for Replace" required="required" />
+										 <input type="text" class="form-control" name="product_name" id="productName"  placeholder="Product name for Replace" required="required" />
 	                                  
 									</div>
 								</div>
@@ -137,7 +137,7 @@
 										Model Number  <span class="symbol required"></span>
 									</label>
 									<div class="col-sm-7">
-										 <input type="text" class="form-control"  name="model_number" placeholder="Product name for Replace" required="required" />
+										 <input type="text" class="form-control" id="modelNo" name="model_number" placeholder="Product name for Replace" required="required" />
 	                                  
 									</div>
 								</div>
@@ -157,7 +157,7 @@
 										Bill Number  <span class="symbol required"></span>
 									</label>
 									<div class="col-sm-7">
-										 <input type="text" class="form-control" name ="bill_num"  placeholder="Enter Bill Number" required="required" />
+										 <input type="text" class="form-control" id="billNo" name ="bill_num"  placeholder="Enter Bill Number" required="required" />
 	                                  
 									</div>
 								</div>
@@ -166,7 +166,7 @@
 										Product Amount <span class="symbol required"></span>
 									</label>
 									<div class="col-sm-7">
-										<input type="text" class="form-control" id="productAmount" name="productAmount" placeholder="Enter product Amount" onkeyup="digitvalidation3()" pattern=[0-9]><span id="pin3"></span>
+										<input type="text" class="form-control" id="productAmount" name="productAmount" placeholder="Enter product Amount"  pattern=[0-9]><span id="pin3"></span>
 									</div>
 								</div>
 							</div>

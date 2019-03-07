@@ -18,19 +18,13 @@
 <script>
 	
 			jQuery(document).ready(function() {
-				alert("rahul");
+				// alert("rahul");
 				$("#billNo").keyup(function(){
 					var billNo = $("#billNo").val();
 					$.post("<?php echo site_url("customer/returnBillAjax") ?>", {billNo : billNo}, function(data){		
 						$("#reply").html(data);
 					});
-				});
-				$("#billNo").keyup(function() {
-					  var value = $(this).val();
-					  value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
-					  $(this).val(value);
-					});
-			    	
+				});			    	
 					
 				<?php $i = 1; for($i = 1; $i<=30; $i++){ ?>
 
@@ -38,6 +32,12 @@
 					<?php if($i > $rows){?>
 						$("#row<?php echo $i;?>").hide();
 					<?php }?>
+
+					$('[id="billno"]').keypress(function() {
+					  var value = $(this).val();
+					  value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
+					  $(this).val(value);
+					});
 
 					$('#add<?php echo $i; ?>').click(function(){
 						$("#row<?php echo $i+1;?>").show();

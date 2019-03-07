@@ -13,13 +13,13 @@
                                         <div class="form-group">
                                             <label for="inputEmail3" class="col-sm-2 control-label">Paid Person Name</label>
                                             <div class="col-sm-4">
-                                                <input class="form-control" type="text" name="name" placeholder="Paid Person Name" required="required">
+                                                <input class="form-control" id="paidPname" type="text" name="name" placeholder="Paid Person Name" required="required">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputEmail3" class="col-sm-2 control-label">Paid Reason</label>
                                             <div class="col-sm-10">
-                                            	<input class="form-control" type="text" name="reason" placeholder="Reason Paying amount" required="required">
+                                            	<input class="form-control" id="paidReason" type="text" name="reason" placeholder="Reason Paying amount" required="required">
                                             </div>
                                         </div>
                                         <?php if($balance > 0): ?>

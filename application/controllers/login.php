@@ -29,7 +29,7 @@ class Login extends CI_Controller{
 		}
 	}
 	
-	function logout()
+	public function logout()
 	{
 		$chatData = array("is_login" => false);
 		$this->db->where("clinic_id",$this->session->userdata("clinic_id"));
@@ -39,6 +39,7 @@ class Login extends CI_Controller{
 		$this->session->sess_destroy();
 		redirect(base_url().'login/index.jsp');
 	}
+
 	
 	function lockPage(){
 		if($this->session->userdata("is_login") == false){
