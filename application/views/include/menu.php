@@ -93,7 +93,7 @@
                         <?php } ?>
                         <li class="droplink"><a href="#"><span class="menu-icon icon-globe"></span><p>Activity</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
-                                <li><a href="<?php echo base_url();?>web/query.jsp">Query/Contact List</a></li>
+                                <!--<li><a href="<?php echo base_url();?>web/query.jsp">Query/Contact List</a></li>-->
                                 <li><a href="<?php echo base_url();?>login/changepass.jsp">Change Password</a></li>
                             </ul>
                         </li>
