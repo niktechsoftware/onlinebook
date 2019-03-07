@@ -31,13 +31,21 @@ jQuery(document).ready(function() {
 			$("#basic").code(data);
 		});
 	});
-	// Typeing Class 					
+
+	//Typeing  Class
 	$('[id="input-Default"]').keyup(function() {
 					  var value = $(this).val();
 					  value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
 					  $(this).val(value);
 					});
-	// Select Class 					
+
+	// Selest Class     					
+	$('[data-type="selectClass"]').keyup(function() {
+					  var value = $(this).val();
+					  value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
+					  $(this).val(value);
+					});
+	//Type Class
 	$('[id="clasName"]').keyup(function() {
 					  var value = $(this).val();
 					  value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");

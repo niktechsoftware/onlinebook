@@ -24,7 +24,11 @@
 					$.post("<?php echo site_url("customer/returnBillAjax") ?>", {billNo : billNo}, function(data){		
 						$("#reply").html(data);
 					});
+
 				});			    	
+
+				});
+				    	
 					
 				<?php $i = 1; for($i = 1; $i<=30; $i++){ ?>
 

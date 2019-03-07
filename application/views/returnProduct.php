@@ -116,3 +116,47 @@
 		</div>
 	</form>
 </div>
+<!-- <script>
+	//Item Name
+				$("#item_name<?php //echo $i; ?>").keyup(function() {
+					  var value = $(this).val();
+					  value = value.replace(/[^(A-Za-z)]*/g, "");
+					  $(this).val(value);
+					});
+				//Item Quantity
+				$('[id="item_quantity"]').keyup(function() {
+					  var value = $(this).val();
+					  value = value.replace(/[^(0-9)]*/g, "");
+					  $(this).val(value);
+					});
+				//Item Price
+				$('[id="item_price"]').keyup(function() {
+					  var value = $(this).val();
+					  value = value.replace(/[^(0-9)]*/g, "");
+					  $(this).val(value);
+					});
+				//Item Discount
+				$('[id="item_discount"]').keyup(function() {
+					  var value = $(this).val();
+					  value = value.replace(/[^(0-9)]*/g, "");
+					  $(this).val(value);
+					});
+				//Item discount
+				$('[id="discount"]').keyup(function() {
+					  var value = $(this).val();
+					  value = value.replace(/[^(A-Za-z)]*/g, "");
+					  $(this).val(value);
+					});
+				//Total price
+				$('[id="total_price"]').keyup(function() {
+					  var value = $(this).val();
+					  value = value.replace(/[^(A-Za-z)]*/g, "");
+					  $(this).val(value);
+					});
+				//Sub Total
+				$('[id="sub_total"]').keyup(function() {
+					  var value = $(this).val();
+					  value = value.replace(/[^(A-Za-z)]*/g, "");
+					  $(this).val(value);
+					});
+</script> -->

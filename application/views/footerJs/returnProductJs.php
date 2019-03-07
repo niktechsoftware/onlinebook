@@ -22,7 +22,7 @@
 				$("#billNo").keyup(function(){
 					var billNo = $("#billNo").val();
 					$.post("<?php echo site_url("customer/returnBillAjax") ?>", {billNo : billNo}, function(data){		
-						$("#reply").html(data);
+						$("#reply");
 					});
 				});
 			    	
