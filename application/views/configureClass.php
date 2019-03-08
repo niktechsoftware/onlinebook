@@ -85,3 +85,23 @@
                         </div>
                     </div><!-- Row -->
                 </div><!-- Main Wrapper -->
+
+    <script> 
+	    <?php for($j=1;$j<=$i;$j++){?>
+		    $("#pro<?php echo $j;?>").click(function(){
+			
+			var sr = $("#sr<?php echo $j;?>").val();
+			var customer = $("#customer<?php echo $j;?>").val();
+			var model = $("#model<?php echo $j;?>").val();
+			var replace_p_name = $("#replace_p_name<?php echo $j;?>").val();
+			var bill_num = $("#bill_num<?php echo $j;?>").val();
+			
+				$.post("<?php echo site_url("index.php/replace/updateReplace") ?>",{sr : sr, customer : customer, model : model, replace_p_name : replace_p_name, bill_num : bill_num}, function(data){
+
+					$("#msg1<?php echo $j;?>").val(data);
+				});
+			
+		    });
+		  <?php }
+		?>
+	</script>

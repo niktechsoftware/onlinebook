@@ -17,6 +17,7 @@
                                                 <th>Refund</th>
                                                 <th>Total</th>
                                                 <th>Balance</th>
+                                                <th>Delete Bill</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -63,6 +64,7 @@
                                                 <td><?php echo $row->paid;?></td>
                                                 <td><?php echo $row->total?></td>
                                                 <td><?php echo $row->balance;?></td>
+                                                <td><a href="<?php echo base_url();?>billC/deleteBill/<?php echo $row->customar_id;?>">Delete </a></td>
                                             </tr>
                                         <?php $i++; endforeach;?>
                                         </tbody>

@@ -587,5 +587,5 @@ class Home extends CI_Controller{
 		$data['li']=$list->result();
 		$data['proDetail'] = $this->enter_stock->getAll()->result();
 		$this->load->view("include/template",$data);
-	}
+	} 
 }
