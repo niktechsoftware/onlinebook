@@ -17,7 +17,26 @@
         
 <script>
 
+function proEmailId(inputid,spanid) {
+                    var text_value = document.getElementById(inputid).value;
+                    if (!text_value.match(/^[a-z0-9._]+[@][a-z]+[.][a-z]+$/)) {
+                        document.getElementById(spanid).innerHTML = "Enter valid email id";
+                        document.getElementById(inputid).focus();
+                        if (text_value == "") {
+                            document.getElementById(spanid).innerHTML = " ";
+                        }
+                    }else{
+                        document.getElementById(spanid).innerHTML = " ";
+                        document.getElementById(inputid).focus();
+                    }
 
+                } 
+
+            $('[id="discroption"]').keyup(function() {
+            var value = $(this).val();
+            value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
+            $(this).val(value);
+          });                
 	
 			jQuery(document).ready(function() {
 
@@ -65,7 +84,7 @@
           });
         $('[id="mobile2"]').keyup(function() {
             var value = $(this).val();
-            value = value.replace(/[^(0-9 )]*/g, "");
+            value = value.replace(/[^(0-9)]*/g, "");
             $(this).val(value);
           });
         $('[id="billNumber"]').keyup(function() {
@@ -83,21 +102,8 @@
             value = value.replace(/[^(0-9)]*/g, "");
             $(this).val(value);
           });
-        function ProductEmailId() {
-                var text_value = document.getElementById("email1").value;
-                if (!text_value.match(/^[a-z0-9._]+[@][a-z]+[.][a-z]+$/)) {
-                    document.getElementById("Pemail").innerHTML = "Enter valid email id";
-                    document.getElementById("email1").focus();
-                    if (text_value == "") {
-                        document.getElementById("Pemail").innerHTML = " ";
-                    }
-                }else{
-                  document.getElementById("Pemail").innerHTML = " ";
-                    document.getElementById("email1").focus();
-                }
-
-            }
-        $('[id="product_quantity"]').keyup(function() {
+       
+        $('[name="product_quantity"]').keyup(function() {
             var value = $(this).val();
             value = value.replace(/[^(0-9 )]*/g, "");
             $(this).val(value);
@@ -142,26 +148,7 @@
             value = value.replace(/[^(0-9)]*/g, "");
             $(this).val(value);
           });
-        function dealEmailId() {
-                var text_value = document.getElementById("demail").value;
-                if (!text_value.match(/^[a-z0-9._]+[@][a-z]+[.][a-z]+$/)) {
-                    document.getElementById("dEmail").innerHTML = "Enter valid email id";
-                    document.getElementById("demail").focus();
-                    if (text_value == "") {
-                        document.getElementById("dEmail").innerHTML = " ";
-                    }
-                }else{
-                  document.getElementById("dEmail").innerHTML = " ";
-                    document.getElementById("demail").focus();
-                }
-
-            }
-
-            $('[id="discroption"]').keyup(function() {
-            var value = $(this).val();
-            value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
-            $(this).val(value);
-          });   
+           
 
 
 /////////////////////--------End Validation Of Product Bill Entry------------- /////////////////////////////////

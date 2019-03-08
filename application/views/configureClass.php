@@ -48,7 +48,7 @@
 									</div>
 									<div class="row">
                             			<div class="col-md-12">
-											<table class="table" style="width: 100%; cellspacing: 0;">
+											<table class="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer" id="example" style="width: 100%; cellspacing: 0;">
 	                                        <thead>
 	                                            <tr>
 	                                                <th>#</th>

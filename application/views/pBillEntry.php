@@ -62,7 +62,7 @@
 									Dealer Mobile 1  <span class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="mobile" name="mobile" pattern="[0-9]"><span id="pin"></span>
+									<input type="text" class="form-control" id="mobile" name="mobile" pattern="[6789][0-9]{9}"><span id="pin"></span>
 								</div>
 								
 							</div>
@@ -71,7 +71,7 @@
 									Dealer Mobile 2  <span class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="mobile2" name="mobile2"  pattern="[0-9]" ><span id="pin2"></span>
+									<input type="text" class="form-control" id="mobile2" name="mobile2" ><span id="pin2"></span>
 								</div>
 								
 							</div>
@@ -108,11 +108,13 @@
 							</div>
 							<div class="col-sm-5">
 								<label class="col-sm-5 control-label">
-								EMail ID  <span id="Pemail" Style="color:red;" class="symbol required"></span>
+								EMail ID  
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="email1" onkeyup="ProductEmailId()" name="emailid" required="required" />
+									<input type="text" class="form-control" id="mail123" onkeyup="proEmailId('mail123','errorid')" name="emailid" required="required" />
+									<span id="errorid" Style="color:red;" class="symbol required">hi</span>
 								</div>
+
 							</div>
 							</div>
 							<div class="col-sm-5">
@@ -233,10 +235,11 @@
 							</div>
 							<div class="col-sm-5">
 								<label class="col-sm-5 control-label">
-									Dealer Or Company Email<span id="dEmail" Style="color:red"></span> 
+									Dealer Or Company Email 
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="demail" onkeyup="dealEmailId()" name="demail" />
+									<input type="text" class="form-control" id="demail" onkeyup="proEmailId('demail','dEmail')" name="demail" />
+									<span id="dEmail" Style="color:red"></span> 
 								</div>
 							</div>
 						</div>

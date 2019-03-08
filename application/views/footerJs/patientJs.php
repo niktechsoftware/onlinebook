@@ -150,24 +150,29 @@ function set_item(item) {
 		type: 'POST',
 		data: {keyword:keyword},
 		success:function(data){
+            
 			var d = jQuery.parseJSON(data);
-			
+      			
         	if((d.name.length == 10) || (d.gender.length > 0)){
         		//$("#stuId1").val(d.id);
-        		$("#customer_name").val(d.customer_name);
-            	$("#customer_name_name").val(d.customer_name);
+            
+        		$("#p_name").val(d.name);
+            	$("#gender").val(d.gender);
             	//document.getElementById('gender').value() = d.gender;
-            	$("#box_id").val(d.box_id);
+            	$("#mobile").val(d.mobile);
             	
             	
-            	$("#address1").val(d.address1);
-            	$("#address2").val(d.address2);
-            	$("#mobile1").val(d.mobile1);
+            	$("#address").val(d.address);
+            	$("#weight").val(d.weight);
+            	$("#bp").val(d.bp);
+              $("#gst").val(d.gst);
+
             	
 
 
 				
         	}else{
+            
         		$("#customer_name").val("");
         		$("#customer_number").val("");
             	$("#box_id").val("");
