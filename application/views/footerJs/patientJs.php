@@ -73,6 +73,18 @@ jQuery(document).ready(function() {
                       value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
                       $(this).val(value);
                     });
+    //Paid Person Name
+    $('[id="paidPname"]').keyup(function() {
+                      var value = $(this).val();
+                      value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z )]*/g, "");
+                      $(this).val(value);
+                    });
+    //Paid personn Reason
+    $('[id="paidReason"]').keyup(function() {
+                      var value = $(this).val();
+                      value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
+                      $(this).val(value);
+                    });
 });
 
 function autocomplet() {

@@ -32,7 +32,9 @@
 			                                        <div class="form-group">
 			                                            <label for="input-Default" class="col-sm-2 control-label"><strong>Class Name</strong></label>
 			                                            <div class="col-sm-4">
-			                                                <input type="text" data-type="selectClass"  class="form-control" id="input-Default" name="className">
+
+			                                                <input type="text" class="form-control" id="input-Default" name="className">
+
 			                                            </div>
 			                                      
 			                                          <div class="form-group">

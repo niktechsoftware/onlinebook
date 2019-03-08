@@ -40,7 +40,7 @@ class DayBook extends CI_Controller{
 		$data['mainContent'] = 'dailyExpense';
 	
 		$this->load->view("include/template", $data);
-	}
+	} 
 	
 	function saveRef(){
 		$dat = array(

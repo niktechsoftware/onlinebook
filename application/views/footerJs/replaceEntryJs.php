@@ -17,18 +17,77 @@
         
 <script>
 jQuery(document).ready(function() {
-	$("#dob").change(function(){
-		var birth = $("#dob").val();
-		getAge(new Date(birth));
-	});
+    	$("#dob").change(function(){
+    		var birth = $("#dob").val();
+    		getAge(new Date(birth)); 
+    	});
 	
-	$("#comon").change(function(){
-		var id=$("#comon").val();
-		$.post("<?php echo site_url("patient/basic");?>", {id : id}, function(data){
-			$("#basic").code(data);
-		});
-	});	
-});
+    	$("#comon").change(function(){
+    		var id=$("#comon").val();
+    		$.post("<?php echo site_url("patient/basic");?>", {id : id}, function(data){
+    			$("#basic").code(data);
+    		});
+    	});	
+  });
+  //Customer ID
+  $('[id="country_id"]').keyup(function() {
+                      var value = $(this).val();
+                      value = value.replace(/[^(A-Za-z0-9)]*/g, "");
+                      $(this).val(value);
+                    });
+    //Customer Information Validation-----------------------------------------------------                
+    $('[id="p_name"]').keyup(function() {
+                          var value = $(this).val();
+                          value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z)]*/g, "");
+                          $(this).val(value);
+                        });
+    $('[id="address"]').keyup(function() {
+                          var value = $(this).val();
+                          value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
+                          $(this).val(value);
+                        });
+    $('[id="mobile"]').keyup(function() {
+                          var value = $(this).val();
+                          value = value.replace(/[^(0-9)]*/g, "");
+                          $(this).val(value);
+                        });
+    $('[id="weight"]').keyup(function() {
+                          var value = $(this).val();
+                          value = value.replace(/[^(0-9)]*/g, "");
+                          $(this).val(value);
+                        });
+    $('[id="bp"]').keyup(function() {
+                          var value = $(this).val();
+                          value = value.replace(/[^(0-9)]*/g, "");
+                          $(this).val(value);
+                        });
+    $('[id="productName"]').keyup(function() {
+                          var value = $(this).val();
+                          value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z )]*/g, "");
+                          $(this).val(value);
+                        });
+    $('[id="docFee"]').keyup(function() {
+                          var value = $(this).val();
+                          value = value.replace(/[^(0-9.)]*/g, "");
+                          $(this).val(value);
+                        });
+    $('[id="modelNo"]').keyup(function() {
+                          var value = $(this).val();
+                          value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z)]*/g, "");
+                          $(this).val(value);
+                        });
+    $('[id="billNo"]').keyup(function() {
+                          var value = $(this).val();
+                          value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9)]*/g, "");
+                          $(this).val(value);
+                        });
+    $('[id="productAmount"]').keyup(function() {
+                          var value = $(this).val();
+                          value = value.replace(/[^(0-9)]*/g, "");
+                          $(this).val(value);
+                        });
+
+//End of validation of Customer----------------------------------------------
 
 function autocomplet() {
 	var min_length = 1; // min caracters to display the autocomplete
@@ -139,44 +198,44 @@ function getAge(birth) {
     $("#age").val(age + " Years, " + age_month + " Month, " + age_day + " Days");
 }
 
- function digitvalidation()
-     {
-       var text_value = document.getElementById("mobile").value;
-          if (!text_value.match(/[0-9]$/))
-             {
-                document.getElementById("pin").innerHTML = "Invalid Mobile Number";
-                    if(text_value=="")
-                      {
-                            document.getElementById("pin").innerHTML = " ";
-                      }
-             }
-    }
+ // function digitvalidation()
+ //     {
+ //       var text_value = document.getElementById("mobile").value;
+ //          if (!text_value.match(/[0-9]$/))
+ //             {
+ //                document.getElementById("pin").innerHTML = "Invalid Mobile Number";
+ //                    if(text_value=="")
+ //                      {
+ //                            document.getElementById("pin").innerHTML = " ";
+ //                      }
+ //             }
+ //    }
 
-	 function digitvalidation1()
-     {
-       var text_value = document.getElementById("weight").value;
-          if (!text_value.match(/[0-9]$/))
-             {
-                document.getElementById("pin1").innerHTML = "Invalid Phone Number";
-                    if(text_value=="")
-                      {
-                            document.getElementById("pin1").innerHTML = " ";
-                      }
-             }
-    }
+	//  function digitvalidation1()
+ //     {
+ //       var text_value = document.getElementById("weight").value;
+ //          if (!text_value.match(/[0-9]$/))
+ //             {
+ //                document.getElementById("pin1").innerHTML = "Invalid Phone Number";
+ //                    if(text_value=="")
+ //                      {
+ //                            document.getElementById("pin1").innerHTML = " ";
+ //                      }
+ //             }
+ //    }
 
-		 function digitvalidation3()
-     {
-       var text_value = document.getElementById("productAmount").value;
-          if (!text_value.match(/[0-9]$/))
-             {
-                document.getElementById("pin3").innerHTML = "Invalid Amount";
-                    if(text_value=="")
-                      {
-                            document.getElementById("pin3").innerHTML = " ";
-                      }
-             }
-    }
+	// 	 function digitvalidation3()
+ //     {
+ //       var text_value = document.getElementById("productAmount").value;
+ //          if (!text_value.match(/[0-9]$/))
+ //             {
+ //                document.getElementById("pin3").innerHTML = "Invalid Amount";
+ //                    if(text_value=="")
+ //                      {
+ //                            document.getElementById("pin3").innerHTML = " ";
+ //                      }
+ //             }
+ //    }
 
 
 </script>

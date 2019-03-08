@@ -7,7 +7,7 @@
 					<h4 class="panel-title">Bill  <span class="text-bold">Information</span></h4>
 				</div>
 				<div class="panel-body">
-					<div id="wizard" class="swMain">
+					<div id="wizard" class="swMain"> 
 					<div>
 						<?php 
 							if($this->uri->segment(3) == 'success'){
@@ -62,7 +62,7 @@
 									Dealer Mobile 1  <span class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="mobile" name="mobile" pattern="[0-9]" onkeyup="digitvalidation()" ><span id="pin"></span>
+									<input type="text" class="form-control" id="mobile" name="mobile" pattern="[0-9]"><span id="pin"></span>
 								</div>
 								
 							</div>
@@ -71,7 +71,7 @@
 									Dealer Mobile 2  <span class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="mobile2" name="mobile2" onkeyup="digitvalidation2()" pattern="[0-9]" ><span id="pin2"></span>
+									<input type="text" class="form-control" id="mobile2" name="mobile2"  pattern="[0-9]" ><span id="pin2"></span>
 								</div>
 								
 							</div>
@@ -92,7 +92,7 @@
 								GST NO. <span class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="number" name="gst" required="required" />
+									<input type="text" class="form-control" id="number" name="gst" required="required" style='text-transform:uppercase'/>
 								</div>
 							</div>
 							</div>
@@ -108,10 +108,10 @@
 							</div>
 							<div class="col-sm-5">
 								<label class="col-sm-5 control-label">
-								EMail ID  <span class="symbol required"></span>
+								EMail ID  <span id="Pemail" Style="color:red;" class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="email" name="emailid" required="required" />
+									<input type="text" class="form-control" id="email1" onkeyup="ProductEmailId()" name="emailid" required="required" />
 								</div>
 							</div>
 							</div>
@@ -120,7 +120,7 @@
 								Total Product Quantity  <span class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="product_quantity" name="product_quantity" required="required" onkeyup="digitvalidation3()" pattern="[0-9]" ><span id="pin3"></span>
+									<input type="text" class="form-control" id="product_quantity" name="product_quantity" required="required" pattern="[0-9]" ><span id="pin3"></span>
 								</div>
 							</div>
 							
@@ -233,10 +233,10 @@
 							</div>
 							<div class="col-sm-5">
 								<label class="col-sm-5 control-label">
-									Dealer Or Company Email 
+									Dealer Or Company Email<span id="dEmail" Style="color:red"></span> 
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="demail" name="demail" />
+									<input type="text" class="form-control" id="demail" onkeyup="dealEmailId()" name="demail" />
 								</div>
 							</div>
 						</div>
@@ -249,7 +249,7 @@
 									Discription 
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="discroption" name="discroption" />
+									<input type="text" class="form-control" id="discroption"  name="discroption" />
 								</div>
 							</div>
 							

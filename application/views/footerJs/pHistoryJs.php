@@ -32,8 +32,7 @@ jQuery(document).ready(function() {
 		});
 	});
 
-
-	//Type Class
+	//Typeing  Class
 	$('[id="input-Default"]').keyup(function() {
 					  var value = $(this).val();
 					  value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");

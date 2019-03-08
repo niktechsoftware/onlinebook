@@ -46,9 +46,128 @@
 						});
 					 }
 			    });
-				
-				
-			
+
+ //////////////////////----------Product Bill Entry Validation Start--------------/////////////////////////
+        $('[id="companyName"]').keypress(function() {
+            var value = $(this).val();
+            value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z )]*/g, "");
+            $(this).val(value);
+          });
+        $('[id="daddress"]').keyup(function() {
+            var value = $(this).val();
+            value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
+            $(this).val(value);
+          });
+        $('[id="mobile"]').keyup(function() {
+            var value = $(this).val();
+            value = value.replace(/[^(0-9)]*/g, "");
+            $(this).val(value);
+          });
+        $('[id="mobile2"]').keyup(function() {
+            var value = $(this).val();
+            value = value.replace(/[^(0-9 )]*/g, "");
+            $(this).val(value);
+          });
+        $('[id="billNumber"]').keyup(function() {
+            var value = $(this).val();
+            value = value.replace(/[^(A-Za-z0-9)]*/g, "");
+            $(this).val(value);
+          });
+        $('[id="number"]').keyup(function() {
+            var value = $(this).val();
+            value = value.replace(/[^(A-Za-z0-9)]*/g, "");
+            $(this).val(value);
+          });
+        $('[id="code"]').keyup(function() {
+            var value = $(this).val();
+            value = value.replace(/[^(0-9)]*/g, "");
+            $(this).val(value);
+          });
+        function ProductEmailId() {
+                var text_value = document.getElementById("email1").value;
+                if (!text_value.match(/^[a-z0-9._]+[@][a-z]+[.][a-z]+$/)) {
+                    document.getElementById("Pemail").innerHTML = "Enter valid email id";
+                    document.getElementById("email1").focus();
+                    if (text_value == "") {
+                        document.getElementById("Pemail").innerHTML = " ";
+                    }
+                }else{
+                  document.getElementById("Pemail").innerHTML = " ";
+                    document.getElementById("email1").focus();
+                }
+
+            }
+        $('[id="product_quantity"]').keyup(function() {
+            var value = $(this).val();
+            value = value.replace(/[^(0-9 )]*/g, "");
+            $(this).val(value);
+          });
+        $('[id="vatper"]').keyup(function() {
+            var value = $(this).val();
+            value = value.replace(/[^(0-9.)]*/g, "");
+            $(this).val(value);
+          });
+        $('[id="satper"]').keyup(function() {
+            var value = $(this).val();
+            value = value.replace(/[^(0-9.)]*/g, "");
+            $(this).val(value);
+          });
+        $('[id="roff"]').keyup(function() {
+            var value = $(this).val();
+            value = value.replace(/[^(0-9)]*/g, "");
+            $(this).val(value);
+          });
+        $('[id="freight"]').keyup(function() {
+            var value = $(this).val();
+            value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
+            $(this).val(value);
+          });
+        $('[id="discount"]').keyup(function() {
+            var value = $(this).val();
+            value = value.replace(/[^(0-9)]*/g, "");
+            $(this).val(value);
+          });
+        $('[id="total_prize"]').keyup(function() {
+            var value = $(this).val();
+            value = value.replace(/[^(0-9)]*/g, "");
+            $(this).val(value);
+          });
+        $('[id="amount_paid"]').keyup(function() {
+            var value = $(this).val();
+            value = value.replace(/[^(0-9)]*/g, "");
+            $(this).val(value);
+          });
+        $('[id="balance"]').keyup(function() {
+            var value = $(this).val();
+            value = value.replace(/[^(0-9)]*/g, "");
+            $(this).val(value);
+          });
+        function dealEmailId() {
+                var text_value = document.getElementById("demail").value;
+                if (!text_value.match(/^[a-z0-9._]+[@][a-z]+[.][a-z]+$/)) {
+                    document.getElementById("dEmail").innerHTML = "Enter valid email id";
+                    document.getElementById("demail").focus();
+                    if (text_value == "") {
+                        document.getElementById("dEmail").innerHTML = " ";
+                    }
+                }else{
+                  document.getElementById("dEmail").innerHTML = " ";
+                    document.getElementById("demail").focus();
+                }
+
+            }
+
+            $('[id="discroption"]').keyup(function() {
+            var value = $(this).val();
+            value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
+            $(this).val(value);
+          });   
+
+
+/////////////////////--------End Validation Of Product Bill Entry------------- /////////////////////////////////
+
+        
+
 				$('input#amount_paid').keyup(function(){
 					var total_prize = Number($('#total_prize').val());
 					var amount_paid = Number($('#amount_paid').val());
@@ -57,9 +176,6 @@
 					$("#balance").val(bal);
 				});	
 
-
-				
-				
 				$("#bill_no").keyup(function(){
 					var bill_no = $("#bill_no").val();	
 					$.post("<?php echo site_url("enterStockController/checkBillNumber") ?>", {bill_no : bill_no}, function(data){		
@@ -71,114 +187,114 @@
 				
 				
 				});
-								 function digitvalidation()
-     {
-       var text_value = document.getElementById("mobile").value;
-          if (!text_value.match(/[0-9]$/))
-             {
-                document.getElementById("pin").innerHTML = "Invalid Mobile Number";
-                    if(text_value=="")
-                      {
-                            document.getElementById("pin").innerHTML = " ";
-                      }
-             }
-    }
-										 function digitvalidation2()
-     {
-       var text_value = document.getElementById("mobile2").value;
-          if (!text_value.match(/[0-9]$/))
-             {
-                document.getElementById("pin2").innerHTML = "Invalid Mobile Number";
-                    if(text_value=="")
-                      {
-                            document.getElementById("pin2").innerHTML = " ";
-                      }
-             }
-    }
-												 function digitvalidation3()
-     {
-       var text_value = document.getElementById("product_quantity").value;
-          if (!text_value.match(/[0-9]$/))
-             {
-                document.getElementById("pin3").innerHTML = "Invalid Quantity Number";
-                    if(text_value=="")
-                      {
-                            document.getElementById("pin3").innerHTML = " ";
-                      }
-             }
-    }
-														 function digitvalidation3()
-     {
-       var text_value = document.getElementById("product_quantity").value;
-          if (!text_value.match(/[0-9]$/))
-             {
-                document.getElementById("pin3").innerHTML = "Invalid Quantity Number";
-                    if(text_value=="")
-                      {
-                            document.getElementById("pin3").innerHTML = " ";
-                      }
-             }
-    }
-														 function digitvalidation3()
-     {
-       var text_value = document.getElementById("product_quantity").value;
-          if (!text_value.match(/[0-9]$/))
-             {
-                document.getElementById("pin3").innerHTML = "Invalid Quantity Number";
-                    if(text_value=="")
-                      {
-                            document.getElementById("pin3").innerHTML = " ";
-                      }
-             }
-    }
-														 function digitvalidation3()
-     {
-       var text_value = document.getElementById("product_quantity").value;
-          if (!text_value.match(/[0-9]$/))
-             {
-                document.getElementById("pin3").innerHTML = "Invalid Quantity Number";
-                    if(text_value=="")
-                      {
-                            document.getElementById("pin3").innerHTML = " ";
-                      }
-             }
-    }
-														 function digitvalidation3()
-     {
-       var text_value = document.getElementById("product_quantity").value;
-          if (!text_value.match(/[0-9]$/))
-             {
-                document.getElementById("pin3").innerHTML = "Invalid Quantity Number";
-                    if(text_value=="")
-                      {
-                            document.getElementById("pin3").innerHTML = " ";
-                      }
-             }
-    }
-														 function digitvalidation3()
-     {
-       var text_value = document.getElementById("product_quantity").value;
-          if (!text_value.match(/[0-9]$/))
-             {
-                document.getElementById("pin3").innerHTML = "Invalid Quantity Number";
-                    if(text_value=="")
-                      {
-                            document.getElementById("pin3").innerHTML = " ";
-                      }
-             }
-    }
-														 function digitvalidation9()
-     {
-       var text_value = document.getElementById("product_quantity").value;
-          if (!text_value.match(/[0-9]$/))
-             {
-                document.getElementById("pin9").innerHTML = "Invalid Quantity Number";
-                    if(text_value=="")
-                      {
-                            document.getElementById("pin9").innerHTML = " ";
-                      }
-             }
-    }
+				// 				 function digitvalidation()
+    //  {
+    //    var text_value = document.getElementById("mobile").value;
+    //       if (!text_value.match(/[0-9]$/))
+    //          {
+    //             document.getElementById("pin").innerHTML = "Invalid Mobile Number";
+    //                 if(text_value=="")
+    //                   {
+    //                         document.getElementById("pin").innerHTML = " ";
+    //                   }
+    //          }
+    // }
+				// 						 function digitvalidation2()
+    //  {
+    //    var text_value = document.getElementById("mobile2").value;
+    //       if (!text_value.match(/[0-9]$/))
+    //          {
+    //             document.getElementById("pin2").innerHTML = "Invalid Mobile Number";
+    //                 if(text_value=="")
+    //                   {
+    //                         document.getElementById("pin2").innerHTML = " ";
+    //                   }
+    //          }
+    // }
+				// 								 function digitvalidation3()
+    //  {
+    //    var text_value = document.getElementById("product_quantity").value;
+    //       if (!text_value.match(/[0-9]$/))
+    //          {
+    //             document.getElementById("pin3").innerHTML = "Invalid Quantity Number";
+    //                 if(text_value=="")
+    //                   {
+    //                         document.getElementById("pin3").innerHTML = " ";
+    //                   }
+    //          }
+    // }
+				// 										 function digitvalidation3()
+    //  {
+    //    var text_value = document.getElementById("product_quantity").value;
+    //       if (!text_value.match(/[0-9]$/))
+    //          {
+    //             document.getElementById("pin3").innerHTML = "Invalid Quantity Number";
+    //                 if(text_value=="")
+    //                   {
+    //                         document.getElementById("pin3").innerHTML = " ";
+    //                   }
+    //          }
+    // }
+				// 										 function digitvalidation3()
+    //  {
+    //    var text_value = document.getElementById("product_quantity").value;
+    //       if (!text_value.match(/[0-9]$/))
+    //          {
+    //             document.getElementById("pin3").innerHTML = "Invalid Quantity Number";
+    //                 if(text_value=="")
+    //                   {
+    //                         document.getElementById("pin3").innerHTML = " ";
+    //                   }
+    //          }
+    // }
+				// 										 function digitvalidation3()
+    //  {
+    //    var text_value = document.getElementById("product_quantity").value;
+    //       if (!text_value.match(/[0-9]$/))
+    //          {
+    //             document.getElementById("pin3").innerHTML = "Invalid Quantity Number";
+    //                 if(text_value=="")
+    //                   {
+    //                         document.getElementById("pin3").innerHTML = " ";
+    //                   }
+    //          }
+    // }
+				// 										 function digitvalidation3()
+    //  {
+    //    var text_value = document.getElementById("product_quantity").value;
+    //       if (!text_value.match(/[0-9]$/))
+    //          {
+    //             document.getElementById("pin3").innerHTML = "Invalid Quantity Number";
+    //                 if(text_value=="")
+    //                   {
+    //                         document.getElementById("pin3").innerHTML = " ";
+    //                   }
+    //          }
+    // }
+				// 										 function digitvalidation3()
+    //  {
+    //    var text_value = document.getElementById("product_quantity").value;
+    //       if (!text_value.match(/[0-9]$/))
+    //          {
+    //             document.getElementById("pin3").innerHTML = "Invalid Quantity Number";
+    //                 if(text_value=="")
+    //                   {
+    //                         document.getElementById("pin3").innerHTML = " ";
+    //                   }
+    //          }
+    // }
+				// 										 function digitvalidation9()
+    //  {
+    //    var text_value = document.getElementById("product_quantity").value;
+    //       if (!text_value.match(/[0-9]$/))
+    //          {
+    //             document.getElementById("pin9").innerHTML = "Invalid Quantity Number";
+    //                 if(text_value=="")
+    //                   {
+    //                         document.getElementById("pin9").innerHTML = " ";
+    //                   }
+    //          }
+    // }
 	
 			
 		</script>

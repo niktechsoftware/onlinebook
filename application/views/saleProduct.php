@@ -123,15 +123,15 @@
 	                            </td>
 	                       </tr>
 	                       <script>
-	                       $("#item_quantity<?php echo $i;?>").keyup(function(){
-	                       					var value = $(this).val();
-					  						value = value.replace(/[^(0-9)]*/g, "");
-					  						$(this).val(value);
-											var st = $("#item_quantity<?php echo $i;?>").val();
-											var count=<?php echo $i;?>;
+	                       //$("#item_quantity<?php echo $i;?>").keyup(function(){
+	                       				//	var value = $(this).val();
+					  						//value = value.replace(/[^(0-9)]*/g, "");
+					  						//$(this).val(value);
+											//var st = $("#item_quantity<?php echo $i;?>").val();
+											//var count=<?php echo $i;?>;
 										
-											var pr = Number($('#item_price<?php echo $i; ?>').val());
-											var vatper = Number($('#vat<?php echo $i;?>').val());
+											//var pr = Number($('#item_price<?php echo $i; ?>').val());
+											/*var vatper = Number($('#vat<?php echo $i;?>').val());
 											var satper = Number($('#sat<?php echo $i;?>').val());
 											var dis = $('#discount<?php echo $i;?>').val();
 											var totalamount= st*pr;
@@ -146,6 +146,38 @@
 											totaly = totaly + Number($('#sub_total<?php echo $g;?>').val());
 											<?php }?>
 											$("#total").val(totaly);
+											});*/
+											$("#item_quantity<?php echo $i;?>").keyup(function(){
+											var totaly=0;
+											var bal=0;
+											console.log("i", <?php echo $i;?>);
+											var tmp = 0;
+											<?php for($g=1;$g<=30 ;$g++){?>
+											var gVal = <?php echo $g;?>
+											//if($('#item_quantity'+gVal).val() > 0 ) {
+												//totaly = totaly + Number($('#sub_total'+gVal).val());
+												var st = $("#item_quantity"+gVal).val();
+												console.log('row' + gVal +" item qty" + st);
+											//	if(st >= 1 ) {
+												//console.log(totaly,Number($('#sub_total'+gVal).val()));
+													var pr = Number($('#item_price'+gVal).val());
+													var vatper = Number($('#vat'+gVal).val());
+													var satper = Number($('#sat'+gVal).val());
+													var dis = $('#discount'+gVal).val();
+													var totalamount= st*pr;
+													var sat = (totalamount*satper)/100;
+													var vat = (totalamount*vatper)/100;
+													bal = totalamount + sat + vat- dis;
+													totaly += bal;
+													$("#total_price"+gVal).val(bal);
+													$("#sub_total"+gVal).val(bal);
+												//}
+											//}
+											console.log(Number($('#sub_total<?php echo $g;?>').val()));
+											<?php }?>
+											$("#total").val(totaly);
+											//$("#total_price"+gVal).val(bal);
+											//$("#sub_total"+gVal).val(bal);
 											});
 
 
