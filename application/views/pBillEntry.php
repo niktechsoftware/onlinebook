@@ -112,7 +112,7 @@
 								</label>
 								<div class="col-sm-7">
 									<input type="text" class="form-control" id="mail123" onkeyup="proEmailId('mail123','errorid')" name="emailid" required="required" />
-									<span id="errorid" Style="color:red;" class="symbol required">hi</span>
+									<span id="errorid" Style="color:red;" class="symbol required"></span>
 								</div>
 
 							</div>

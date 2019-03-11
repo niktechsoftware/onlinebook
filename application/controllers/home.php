@@ -100,7 +100,7 @@ class Home extends CI_Controller{
 		$data['mainContent'] = "pBillEntry";
 		$data['headerCss'] = "headerCss/saleProductCss";
 		$data['footerJs'] = "footerJs/pEntryJs";
-		$this->load->view("include/template",$data);
+		$this->load->view("include/template",$data); 
 	}
 	
 	public function getSubjects() {
@@ -486,37 +486,37 @@ class Home extends CI_Controller{
 	<?php }
 	
 	function pBillHistory(){
-		$data['subPage'] = 'Bill';
+		$data['subPage'] = 'Bills';
 		$data['title'] = "Purchase Bill History";
-		$data['smallTitle'] = "Sale / Purchase Bill History";
+		$data['smallTitle'] = "Parchase / Purchase Bill History";
 		$data['pageTitle'] = "Purchase Bill History";
 		$data['mainContent'] = "pBillHistory";
 		$data['headerCss'] = "headerCss/listCss";
-		$data['footerJs'] = "footerJs/listJs";
+		$data['footerJs'] = "footerJs/replacelistJs";
 		$data['pBillInfo'] = $this->bill_info->getAll();
 		$this->load->view("include/template",$data); 
 	}
 	
 	function sBillHistory(){
-		$data['subPage'] = 'Bill History';
+		$data['subPage'] = 'Bills';
 		$data['title'] = "Sale Bill History";
 		$data['smallTitle'] = "Sale / Sale Bill History";
 		$data['pageTitle'] = "Sale Bill History";
 		$data['mainContent'] = "sBillHistory";
 		$data['headerCss'] = "headerCss/listCss";
-		$data['footerJs'] = "footerJs/listJs";
+		$data['footerJs'] = "footerJs/replacelistJs";
 		$data['sBillInfo'] = $this->sale_bill->getAll()->result();
 		$this->load->view("include/template",$data);
 	}
 	
 	function tBillHistory(){
-		$data['subPage'] = 'Bill History';
-		$data['title'] = "Sale Bill History";
-		$data['smallTitle'] = "Sale / Sale Bill History";
-		$data['pageTitle'] = "Sale Bill History";
+		$data['subPage'] = 'Bills';
+		$data['title'] = "Taxe Bill History";
+		$data['smallTitle'] = "Tax / Tax Bill History";
+		$data['pageTitle'] = "Tax Bill History";
 		$data['mainContent'] = "tBillHistory";
 		$data['headerCss'] = "headerCss/listCss";
-		$data['footerJs'] = "footerJs/listJs";
+		$data['footerJs'] = "footerJs/replacelistJs";
 		
 		$this->load->view("include/template",$data);
 	}
@@ -524,11 +524,11 @@ class Home extends CI_Controller{
 	function rBillHistory(){
 		$data['subPage'] = 'Bill';
 		$data['title'] = "Return Bill History";
-		$data['smallTitle'] = "Sale / Return Bill History";
+		$data['smallTitle'] = "Return / Return Bill History";
 		$data['pageTitle'] = "Return Bill History";
 		$data['mainContent'] = "rBillHistory";
 		$data['headerCss'] = "headerCss/listCss";
-		$data['footerJs'] = "footerJs/listJs";
+		$data['footerJs'] = "footerJs/replacelistJs";
 		$data['rBillInfo'] = $this->return_bill->getAll()->result();
 		$this->load->view("include/template",$data);
 	}

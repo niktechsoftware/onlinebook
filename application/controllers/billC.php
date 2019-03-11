@@ -79,5 +79,12 @@ class BillC extends CI_Controller{
 	    
 	    
 	}
+	function deleteAllBill(){
+		$this->db->where("salebill_no",$sale_bill);
+	    $this->db->delete("salebill_no");
+	  	$this->db->where("reff_bil_num",$billinfo);
+	  	$this->db->delete("bill_info");?>
+	}
+	
 
 }

@@ -30,7 +30,7 @@
                             <div class="panel panel-white">
                                 <div class="panel-body">
                                    <div class="table-responsive">
-                                            <table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_1">
+                                            <table class="table table-striped table-bordered table-hover table-checkable order-column" id="example">
                                         <thead>
                                         	<tr>
                                             	<th>#</th>
