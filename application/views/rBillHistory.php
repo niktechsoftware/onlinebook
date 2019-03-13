@@ -3,7 +3,7 @@
                             <div class="panel panel-white">
                                 <div class="panel-body">
                                    <div class="table-responsive">
-                                    <table class="table table-striped table-bordered table-hover table-checkable order-column" id="example" style="width: 100%; cellspacing: 0;">
+                                    <table id="example" class="display table" style="width: 100%; cellspacing: 0;">
                                         <thead>
                                         	<tr>
                                             	<th>#</th>
@@ -17,7 +17,6 @@
                                                 <th>Refund</th>
                                                 <th>Total</th>
                                                 <th>Balance</th>
-                                                <th>Delete Bill</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -64,7 +63,6 @@
                                                 <td><?php echo $row->paid;?></td>
                                                 <td><?php echo $row->total?></td>
                                                 <td><?php echo $row->balance;?></td>
-                                                <td><a href="<?php echo base_url();?>billC/deleteBill/<?php echo $row->customar_id;?>">Delete </a></td>
                                             </tr>
                                         <?php $i++; endforeach;?>
                                         </tbody>

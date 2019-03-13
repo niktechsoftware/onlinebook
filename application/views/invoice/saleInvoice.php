@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!<html xmlns="http://www.w3.org/1999/xhtml">
 <style>
 .tba {
     background: url(img_flwr.gif);
@@ -92,8 +92,6 @@
 
 	<div id="page-wrap">
 		
-		<textarea id="header" style="height:35px; color:black; font-size:25px; letter-spacing:5px;">SALE INVOICE</textarea>
-		
 		<table style="width: 100%" class='tba'>
 			<tr>
 				<td  style="border: none;">
@@ -102,8 +100,8 @@
 					
 				</td>
 				<td style="border: none;">
-					<h3 align="left" style="text-transform:uppercase; margin-left:150px; font-size:300%;"><?php echo $info->cilnic_name; ?></h3>
-			        <h4 align="left" style="font-variant:small-caps; font-size:130%; margin-left:190px;">
+					<h3 align="left" style="text-transform:uppercase; margin-left:110px; font-size:250%;"><?php echo $info->cilnic_name; ?></h3>
+			        <h4 align="left" style="font-variant:small-caps; font-size:130%; margin-left:130px;">
 						<?php echo $info->address_1." Mobile ".$info->mobile_number; ?>
 			        </h4>
 			        <h5 align="left" style="font-variant:small-caps; font-size:100%; margin-left:280px;">
@@ -161,12 +159,16 @@
 			</div>
 			
 			
-			
-            <div style="display:inline-block; float:right">
-            <table>
-                <tr>
-                    <td class="meta-head" colspan="2"><h5>Purchase Order</h5></td>
-                </tr>
+			<table>
+			<tr>
+			<td style="width: 60%">
+			<h4 style="border: 0px solid #000; padding: 4px; width: 200px; margin-left:280px;">
+							Sale Invoice
+						</h4>
+			</td>
+			<td style="width: 40%">
+			 <table>
+              
                 <tr>
                     <td >
                     	Reciept No.
@@ -177,24 +179,13 @@
                     <td >Date</td>
                     <td><?php echo date("d-M-Y", strtotime($total_info->date)); ?></td>
                 </tr>
-                  <tr>
-                    <td>Chalan Number : </td>
-                    <?php 
-                    	$this->db->where("salebill_no",$this->uri->segment(3));
-                    	$trj = $this->db->get("sale_bill")->row();;
-
-                    
-                    ?>
-                    <td><?php echo $trj->chalan_num; ?></td>
-                </tr>
+                 
             </table>
-            </div>
-          
-					<div  style="margin-left:180px;"></br></br></br>
-						<h2 style="border: 0px solid #000; padding: 4px; width: 200px; margin-left:150px;">
-							ESTIMATE
-						</h2>
-			</div>
+			
+			</td>
+			</tr>
+			</table>
+			
 		 <?php $this->db->where("salebill_no",$this->uri->segment(3));
 		  		$printvat = $this->db->get("sale_bill")->row();
 		  		
@@ -210,7 +201,6 @@
              
                <th width="30%" style="border: 1px solid #000;">Description</th>
                <th width="7%" style="border: 1px solid #000;">Quantity</th>
-                <th width="7%" style="border: 1px solid #000;">Subject</th>
                <th width="9%" style="border: 1px solid #000;">Unit Price</th>
                 <th width="5%" style="border: 1px solid #000;">SGST</th>
                  <th width="5%" style="border: 1px solid #000;">CGST</th>
@@ -234,8 +224,8 @@
 		     
 		    <td style="border: 1px solid #000;">
 		      	<?php 
-		      	 $subject = $this->db->query('SELECT `booksubject` FROM `booksubject` WHERE `bookclass_id`='.$row->hsn_sac.';')->row();
-		      		echo $row->item_name;
+		      	$subject = $this->db->query('SELECT `booksubject` FROM `booksubject` WHERE `bookclass_id`='.$row->hsn_sac.';')->row();
+		     	echo $row->item_name;
 		      		
 		      		
 		      	?>
@@ -243,10 +233,7 @@
 		      <td style="border: 1px solid #000;"><?php echo $row->product_quantity; ?>
 		      
 		      	</td>
-		      	 <td style="border: 1px solid #000;">
-		      	     
-		      	     <?php echo $subject->booksubject;?>
-		      	 </td>
+		      	 
 		      <td style="border: 1px solid #000;"><?php echo $row->prise_per_pro; ?></td>
 		         <td style="border: 1px solid #000;"><?php echo $row->sat; ?></td>
 		            <td style="border: 1px solid #000;"><?php echo $row->vat; ?></td>
@@ -264,7 +251,7 @@
 		        
 		   
 		   <tr>
-		      <td colspan="10" align="center" style="border: 1px solid #000;"><strong>Total</strong></td>
+		      <td colspan="9" align="center" style="border: 1px solid #000;"><strong>Total</strong></td>
 		       
 		      <td style="border: 1px solid #000;" ><?php echo $total_info->total; ?></td>
 		  </tr>

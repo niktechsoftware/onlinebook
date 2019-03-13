@@ -1,3 +1,6 @@
+                        <?php if($this->session->userdata("login_type") == "Accountant"){ ?>
+<script src="<?php echo base_url()?>assets/plugins/jquery/jquery-2.1.3.min.js"></script>
+}
 <div id="main-wrapper" class="container" style="width:100%; font-size:12px;">
 	<form action="<?php echo base_url();?>product/saleProduct" method ="post">
 	<div class="row">
@@ -7,6 +10,7 @@
 				<div class="panel-body"  >
 					<div class="row space20">
 						<div class="col-sm-4">
+						
 							<label class="col-sm-6 control-label">
 								Select Customer<span class="symbol required"></span>
 							</label>
@@ -56,7 +60,7 @@
 		                           <th width="250"><label>Name</label></th>
 		                          
 		                           <th><label>Price/Piece</label></th>
-		                            <th><label>Hsn/Sac</label></th>
+		                          
 		                           <th><label>Avl.Q.</label></th>
 		                           <th><label>Quantity</label></th>
 		                            <th><label>CGST</label></th>
@@ -83,9 +87,8 @@
 	                                   <input id="item_price<?php echo $i; ?>" class='form-control'  name="item_price<?php echo $i; ?>" width='100%' readonly >
 	                                    <input type="hidden"  id="company_name<?php echo $i; ?>" class='form-control'  name="company_name<?php echo $i; ?>" width='100%'>
 	                                     <input type="hidden" id="product_code<?php echo $i; ?>" class='form-control'  name="product_code<?php echo $i; ?>" width='100%' readonly="readonly">
-	                            </td>
-	                            <td>
-	                                   <input type='text' class='form-control' id='hsn_sac<?php echo $i; ?>' name="hsn_sac<?php echo $i; ?>" width='100%' readonly>
+	                          
+	                                   <input type='hidden' class='form-control' id='hsn_sac<?php echo $i; ?>' name="hsn_sac<?php echo $i; ?>" width='100%'>
 	                            </td>
 	                            <td>
 	                                <input id="avlQ<?php echo $i; ?>" name="avlQ<?php echo $i; ?>" class='form-control' width='100%' type="text"/ readonly>

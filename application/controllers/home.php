@@ -100,7 +100,7 @@ class Home extends CI_Controller{
 		$data['mainContent'] = "pBillEntry";
 		$data['headerCss'] = "headerCss/saleProductCss";
 		$data['footerJs'] = "footerJs/pEntryJs";
-		$this->load->view("include/template",$data); 
+		$this->load->view("include/template",$data);
 	}
 	
 	public function getSubjects() {
@@ -108,10 +108,13 @@ class Home extends CI_Controller{
 	
 	    $copy=21;
 	   
-	    $subjects = $this->db->query('SELECT * FROM `enter_stock1` WHERE (`hsn_sac`= '.$classID.' OR `hsn_sac`= '.$copy.')  GROUP BY `name` ORDER BY `sno` DESC;')->result();
+	    $subjects = $this->db->query('SELECT * FROM `enter_stock1` WHERE (`hsn_sac`= '.$classID.' OR `hsn_sac`= '.$copy.')  GROUP BY `name`;')->result();
 	    $finalData =  array();
 	    foreach($subjects AS $key => $value):
-	        $subject = $this->db->query('SELECT `booksubject` FROM `booksubject` WHERE `bookclass_id`='.$value->hsn_sac.';')->row();
+	    $this->db->where("bookclass_id",$value->hsn_sac);
+	    $this->db->where("booksubject",$value->company_name);
+	   $subject= $this->db->get("booksubject")->row();
+	        //$subject = $this->db->query('SELECT * FROM `booksubject` WHERE `bookclass_id`='.$value->hsn_sac.' AND  `booksubject`='.$value->company_name.';')->row();
 	        
 	       	$queryString = "SELECT SUM(`extraQuantity`) AS `extraQuantity`  FROM `enter_stock1` WHERE `hsn_sac`='".$value->hsn_sac."' AND `name`='".$value->name."' AND `name`='".$value->name."';";
 		    $oldQuantity = $this->db->query($queryString)->result();
@@ -121,7 +124,7 @@ class Home extends CI_Controller{
 		
 		    $actualq = $oldQuantity[0]->extraQuantity - $saleQuantity[0]->total;
 		    
-		    array_push($finalData, array("total" => $actualq, "booksubject" => $subject->booksubject));
+		    array_push($finalData, array("total" => $actualq, "booksubject" => $subject->id));
 	    endforeach;
 	    echo json_encode(array("other" => $finalData, "tableData" => $subjects));
 	}
@@ -486,37 +489,37 @@ class Home extends CI_Controller{
 	<?php }
 	
 	function pBillHistory(){
-		$data['subPage'] = 'Bills';
+		$data['subPage'] = 'Bill';
 		$data['title'] = "Purchase Bill History";
-		$data['smallTitle'] = "Parchase / Purchase Bill History";
+		$data['smallTitle'] = "Sale / Purchase Bill History";
 		$data['pageTitle'] = "Purchase Bill History";
 		$data['mainContent'] = "pBillHistory";
 		$data['headerCss'] = "headerCss/listCss";
-		$data['footerJs'] = "footerJs/replacelistJs";
+		$data['footerJs'] = "footerJs/listJs";
 		$data['pBillInfo'] = $this->bill_info->getAll();
 		$this->load->view("include/template",$data); 
 	}
 	
 	function sBillHistory(){
-		$data['subPage'] = 'Bills';
+		$data['subPage'] = 'Bill History';
 		$data['title'] = "Sale Bill History";
 		$data['smallTitle'] = "Sale / Sale Bill History";
 		$data['pageTitle'] = "Sale Bill History";
 		$data['mainContent'] = "sBillHistory";
 		$data['headerCss'] = "headerCss/listCss";
-		$data['footerJs'] = "footerJs/replacelistJs";
+		$data['footerJs'] = "footerJs/listJs";
 		$data['sBillInfo'] = $this->sale_bill->getAll()->result();
 		$this->load->view("include/template",$data);
 	}
 	
 	function tBillHistory(){
-		$data['subPage'] = 'Bills';
-		$data['title'] = "Taxe Bill History";
-		$data['smallTitle'] = "Tax / Tax Bill History";
-		$data['pageTitle'] = "Tax Bill History";
+		$data['subPage'] = 'Bill History';
+		$data['title'] = "Sale Bill History";
+		$data['smallTitle'] = "Sale / Sale Bill History";
+		$data['pageTitle'] = "Sale Bill History";
 		$data['mainContent'] = "tBillHistory";
 		$data['headerCss'] = "headerCss/listCss";
-		$data['footerJs'] = "footerJs/replacelistJs";
+		$data['footerJs'] = "footerJs/listJs";
 		
 		$this->load->view("include/template",$data);
 	}
@@ -524,11 +527,11 @@ class Home extends CI_Controller{
 	function rBillHistory(){
 		$data['subPage'] = 'Bill';
 		$data['title'] = "Return Bill History";
-		$data['smallTitle'] = "Return / Return Bill History";
+		$data['smallTitle'] = "Sale / Return Bill History";
 		$data['pageTitle'] = "Return Bill History";
 		$data['mainContent'] = "rBillHistory";
 		$data['headerCss'] = "headerCss/listCss";
-		$data['footerJs'] = "footerJs/replacelistJs";
+		$data['footerJs'] = "footerJs/listJs";
 		$data['rBillInfo'] = $this->return_bill->getAll()->result();
 		$this->load->view("include/template",$data);
 	}
@@ -589,5 +592,5 @@ class Home extends CI_Controller{
 		$data['li']=$list->result();
 		$data['proDetail'] = $this->enter_stock->getAll()->result();
 		$this->load->view("include/template",$data);
-	} 
+	}
 }

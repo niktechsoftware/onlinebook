@@ -125,23 +125,30 @@ class Product extends CI_Controller{
 		}
 		
 		
+		$this->db->where("opening_date",date('Y-m-d'));
+		$this->load->model("opening_closing_balance");
+		$closing = $this->opening_closing_balance->closing();
+		$clb = $closing->opening_balance + $this->input->post("total");
+		
+	//	$clb = $this->db->get("opening_closing_balance")->row()->closing_balance;
+	//	$clb = $clb + ($this->input->post("total"));
 		$daybook=array(
 				"total_amount" => $this->input->post("total"),
+				"paid_amount" => $this->input->post("total"),
+				"closing_balance" => $clb,
 				"balance"	=> 0,
 				"pay_date"=> date("Y-m-d"),
 				"reason" =>"From sale Stock",
 				"pay_mode"=>"Cash, ".$billno,
 				"pay_mode"=>$this->input->post("pay_mode"),
-				"dabit_cradit" => "cradit",
+				"dabit_cradit" => "1",
 				"paid_by"=>$customer,
 				"clinic_id" => $this->session->userdata("clinic_id"),
 				"invoice_no" =>$billno
 		);
 		
 		
-		$this->db->where("opening_date",date('Y-m-d'));
-		$clb = $this->db->get("opening_closing_balance")->row()->closing_balance;
-		$clb = $clb + ($this->input->post("total"));
+		
 		$balance = array(
 				"closing_balance" => $clb
 		);
@@ -310,6 +317,7 @@ class Product extends CI_Controller{
 		
 		$daybook=array(
 				"total_amount" => $this->input->post("total"),
+				"paid_amount" => $this->input->post("total"),
 				"balance"	=> 0,
 				"pay_date"=> date("Y-m-d"),
 				"reason" =>"From sale Stock",

@@ -51,7 +51,7 @@ class Bill_info extends CI_Model{
 			}}
 		$productData = array(
 				"name" => $this->input->post("itemName$i"),
-			
+				
 				"company_name" => $this->input->post("itemCompanyName$i"),
 				"prize_perunit" => $this->input->post("unitPrice$i"),
 				"pRate" => $this->input->post("pRate$i"),
@@ -95,7 +95,7 @@ class Bill_info extends CI_Model{
 				'paid_to'		=>$this->input->post("companyName"),
 				'paid_by'		=>"Samrat Pushtak",
 				'reason'		=>"Purchase ",
-				'dabit_cradit'	=>"Debit",
+				'dabit_cradit'	=>"0",
 				'total_amount'	=>$this->input->post("total_prize"),
 				'paid_amount'	=>$this->input->post("amount_paid"),
 				'balance'		=>$this->input->post("balance"),

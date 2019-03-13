@@ -30,7 +30,7 @@
 									Company Name or Dealer Name <span class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="companyName" name="companyName" required="required" />
+									<input type="text" class="form-control" id="companyName1" name="companyName" required="required" />
 								</div>	
 							</div>
 						 
@@ -62,7 +62,7 @@
 									Dealer Mobile 1  <span class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="mobile" name="mobile" pattern="[6789][0-9]{9}"><span id="pin"></span>
+									<input type="text" class="form-control" id="mobile" name="mobile" ><span id="pin"></span>
 								</div>
 								
 							</div>
@@ -71,7 +71,7 @@
 									Dealer Mobile 2  <span class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="mobile2" name="mobile2" ><span id="pin2"></span>
+									<input type="text" class="form-control" id="mobile2" name="mobile2"  ><span id="pin2"></span>
 								</div>
 								
 							</div>
@@ -108,13 +108,11 @@
 							</div>
 							<div class="col-sm-5">
 								<label class="col-sm-5 control-label">
-								EMail ID  
+								EMail ID  <span id="Pemail" Style="color:red;" class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="mail123" onkeyup="proEmailId('mail123','errorid')" name="emailid" required="required" />
-									<span id="errorid" Style="color:red;" class="symbol required"></span>
+									<input type="text" class="form-control" id="email1" onkeyup="ProductEmailId()" name="emailid" required="required" />
 								</div>
-
 							</div>
 							</div>
 							<div class="col-sm-5">
@@ -122,7 +120,7 @@
 								Total Product Quantity  <span class="symbol required"></span>
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="product_quantity" name="product_quantity" required="required" pattern="[0-9]" ><span id="pin3"></span>
+									<input type="text" class="form-control" id="product_quantity" name="product_quantity" required="required"  ><span id="pin3"></span>
 								</div>
 							</div>
 							
@@ -235,11 +233,10 @@
 							</div>
 							<div class="col-sm-5">
 								<label class="col-sm-5 control-label">
-									Dealer Or Company Email 
+									Dealer Or Company Email<span id="dEmail" Style="color:red"></span> 
 								</label>
 								<div class="col-sm-7">
-									<input type="text" class="form-control" id="demail" onkeyup="proEmailId('demail','dEmail')" name="demail" />
-									<span id="dEmail" Style="color:red"></span> 
+									<input type="text" class="form-control" id="demail" onkeyup="dealEmailId()" name="demail" />
 								</div>
 							</div>
 						</div>

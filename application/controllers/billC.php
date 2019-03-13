@@ -54,7 +54,7 @@ class BillC extends CI_Controller{
 				"reason" => "(Wrong Bill number by =) ".$billinfo,
 				"dabit_cradit" => "1",
 				"paid_amount" => $bilinfor->total_prize,
-				"total_amount" => $bilinfor->total_prize,
+					"total_amount" => $bilinfor->total_prize,
 				"closing_balance" => $cu_closing,
 				"pay_date" => date("Y-m-d"),
 				"pay_mode" => "Cash",
@@ -69,8 +69,8 @@ class BillC extends CI_Controller{
 	  
 	     $this->db->where("reff_bill_num",$billinfo);
 	     $this->db->delete("enter_stock1");
-	  	 $this->db->where("reff_bil_num",$billinfo);
-	  	 $this->db->delete("bill_info");?>
+	   $this->db->where("reff_bil_num",$billinfo);
+	   $this->db->delete("bill_info");?>
 	   <script>
 	   alert("Bill Deleted Successfully!!");
 	   </script>
@@ -79,12 +79,5 @@ class BillC extends CI_Controller{
 	    
 	    
 	}
-	function deleteAllBill(){
-		$this->db->where("salebill_no",$sale_bill);
-	    $this->db->delete("salebill_no");
-	  	$this->db->where("reff_bil_num",$billinfo);
-	  	$this->db->delete("bill_info");?>
-	}
-	
 
 }

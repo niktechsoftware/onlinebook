@@ -1,4 +1,5 @@
 					 <div class="portlet light ">
+                                        
 					<div class="portlet-body">
                                             <div class="table-toolbar">
                                                 
@@ -25,12 +26,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="panel panel-white">
-                                <div class="panel-body">
-                                   <div class="table-responsive">
-                                            <table class="table table-striped table-bordered table-hover table-checkable order-column" id="example">
+                                            <table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_1">
                                         <thead>
                                         	<tr>
                                             	<th>#</th>
@@ -44,9 +40,9 @@
                                                 <th>Pay Mode</th>
                                                 <th>Date</th>
                                                 <?php if($this->session->userdata("login_type")=="admin"){?>
-                                                 <th>Bill Number</th>
+                                                 <th>Delete Bill</th>
                                                  <?php } ?>
-                                                <th>Delete Bill</th>
+                                                <th>Bill Number</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -72,13 +68,7 @@
                                         <?php $i++; endforeach;?>
                                         </tbody>
                                        </table>  
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-
+                                    </div>
+                                    </div>
                                     
                               

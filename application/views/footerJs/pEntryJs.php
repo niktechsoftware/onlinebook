@@ -1,42 +1,23 @@
-<script src="<?php echo base_url()?>assets/plugins/jquery/jquery-2.1.3.min.js"></script>
-<script src="<?php echo base_url()?>assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-<script src="<?php echo base_url()?>assets/plugins/pace-master/pace.min.js"></script>
-<script src="<?php echo base_url()?>assets/plugins/jquery-blockui/jquery.blockui.js"></script>
-<script src="<?php echo base_url()?>assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="<?php echo base_url()?>assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<script src="<?php echo base_url()?>assets/plugins/switchery/switchery.min.js"></script>
-<script src="<?php echo base_url()?>assets/plugins/uniform/jquery.uniform.min.js"></script>
-<script src="<?php echo base_url()?>assets/plugins/classie/classie.js"></script>
-<script src="<?php echo base_url()?>assets/plugins/waves/waves.min.js"></script>
-<script src="<?php echo base_url()?>assets/plugins/3d-bold-navigation/js/main.js"></script>
-<script src="<?php echo base_url()?>assets/plugins/summernote-master/summernote.min.js"></script>
-<script src="<?php echo base_url()?>assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-<script src="<?php echo base_url()?>assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
-<script src="<?php echo base_url()?>assets/js/modern.min.js"></script>
-<script src="<?php echo base_url()?>assets/js/pages/form-elements.js"></script>
+ 		<script src="<?php echo base_url()?>assets/plugins/jquery/jquery-2.1.3.min.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/pace-master/pace.min.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/jquery-blockui/jquery.blockui.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/switchery/switchery.min.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/uniform/jquery.uniform.min.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/classie/classie.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/waves/waves.min.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/3d-bold-navigation/js/main.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/summernote-master/summernote.min.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+        <script src="<?php echo base_url()?>assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+        <script src="<?php echo base_url()?>assets/js/modern.min.js"></script>
+        <script src="<?php echo base_url()?>assets/js/pages/form-elements.js"></script>
         
 <script>
 
-function proEmailId(inputid,spanid) { 
-                    var text_value = document.getElementById(inputid).value;
-                    if (!text_value.match(/^[a-z0-9._]+[@][a-z]+[.][a-z]+$/)) {
-                        document.getElementById(spanid).innerHTML = "Enter valid email id";
-                        document.getElementById(inputid).focus();
-                        if (text_value == "") {
-                            document.getElementById(spanid).innerHTML = " ";
-                        }
-                    }else{
-                        document.getElementById(spanid).innerHTML = " ";
-                        document.getElementById(inputid).focus();
-                    }
 
-                } 
-
-            $('[id="discroption"]').keyup(function() {
-            var value = $(this).val();
-            value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
-            $(this).val(value);
-          });                
 	
 			jQuery(document).ready(function() {
 
@@ -55,7 +36,7 @@ function proEmailId(inputid,spanid) {
 							$("#demail").val(d.dealer_email);
 							$("#mobile1").val(d.dealar_mobile1);
 							$("#mobile2").val(d.dealar_mobile1);
-							$("#tin").val(d.tin_no);
+						
 
 
             name = name.replace(/\D/g, "").split(/(?:([\d]{4}))/g).filter(s => s.length > 0).join("");
@@ -84,7 +65,7 @@ function proEmailId(inputid,spanid) {
           });
         $('[id="mobile2"]').keyup(function() {
             var value = $(this).val();
-            value = value.replace(/[^(0-9)]*/g, "");
+            value = value.replace(/[^(0-9 )]*/g, "");
             $(this).val(value);
           });
         $('[id="billNumber"]').keyup(function() {
@@ -102,8 +83,21 @@ function proEmailId(inputid,spanid) {
             value = value.replace(/[^(0-9)]*/g, "");
             $(this).val(value);
           });
-       
-        $('[name="product_quantity"]').keyup(function() {
+        function ProductEmailId() {
+                var text_value = document.getElementById("email1").value;
+                if (!text_value.match(/^[a-z0-9._]+[@][a-z]+[.][a-z]+$/)) {
+                    document.getElementById("Pemail").innerHTML = "Enter valid email id";
+                    document.getElementById("email1").focus();
+                    if (text_value == "") {
+                        document.getElementById("Pemail").innerHTML = " ";
+                    }
+                }else{
+                  document.getElementById("Pemail").innerHTML = " ";
+                    document.getElementById("email1").focus();
+                }
+
+            }
+        $('[id="product_quantity"]').keyup(function() {
             var value = $(this).val();
             value = value.replace(/[^(0-9 )]*/g, "");
             $(this).val(value);
@@ -148,7 +142,26 @@ function proEmailId(inputid,spanid) {
             value = value.replace(/[^(0-9)]*/g, "");
             $(this).val(value);
           });
-           
+        function dealEmailId() {
+                var text_value = document.getElementById("demail").value;
+                if (!text_value.match(/^[a-z0-9._]+[@][a-z]+[.][a-z]+$/)) {
+                    document.getElementById("dEmail").innerHTML = "Enter valid email id";
+                    document.getElementById("demail").focus();
+                    if (text_value == "") {
+                        document.getElementById("dEmail").innerHTML = " ";
+                    }
+                }else{
+                  document.getElementById("dEmail").innerHTML = " ";
+                    document.getElementById("demail").focus();
+                }
+
+            }
+
+            $('[id="discroption"]').keyup(function() {
+            var value = $(this).val();
+            value = value.replace(/[ ]+/g," ").replace(/[^(A-Za-z0-9 )]*/g, "");
+            $(this).val(value);
+          });   
 
 
 /////////////////////--------End Validation Of Product Bill Entry------------- /////////////////////////////////

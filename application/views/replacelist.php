@@ -19,7 +19,7 @@
                                                
                                             </tr>
                                         </thead>
-                                        <tbody> 
+                                        <tbody>
                                         <?php 
                                         	$i = 1; foreach($li as $row):
                                         ?>
@@ -35,8 +35,8 @@
                                                
                                                 <td>
                                                 <button id = "pro<?php echo $i;?>" class="btn btn-success">
-				 								   <?php echo $row->status;?> <i class="fa fa-arrow-circle-right"></i>
-				 								</button>
+				 												<?php echo $row->status;?> <i class="fa fa-arrow-circle-right"></i>
+				 											</button>
                                               </td>
                                                 <td>
                                                 <input type ="button" value = "<?php echo $row->replacedate;?>" class="btn btn-success btn-sm" id="msg1<?php echo $i;?>">
@@ -52,9 +52,9 @@
 						</div>
 					</div>
 					
-	<script> 
-	    <?php for($j=1;$j<=$i;$j++){?>
-		    $("#pro<?php echo $j;?>").click(function(){
+					<script> 
+	<?php for($j=1;$j<=$i;$j++){?>
+		$("#pro<?php echo $j;?>").click(function(){
 			
 			var sr = $("#sr<?php echo $j;?>").val();
 			var customer = $("#customer<?php echo $j;?>").val();
@@ -67,7 +67,7 @@
 					$("#msg1<?php echo $j;?>").val(data);
 				});
 			
-		    });
-		  <?php }
+		});
+		<?php }
 		?>
 	</script>

@@ -13,7 +13,9 @@
                                                 <th>Recieved By</th>
                                                 <th>Reason</th>
                                                 <th>Dabit</th>
-                                                 <th>Cradit</th>
+                                                <th>Cradit</th>
+                                                
+                                                 
                                                
                                                 <th>Closing Balance</th>
                                                 <th>Pay Date</th>

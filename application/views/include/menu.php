@@ -2,6 +2,7 @@
                 <div class="page-sidebar-inner">
                     <ul class="menu accordion-menu">
                         <li class="nav-heading"><span>Navigation</span></li>
+                        <?php if($this->session->userdata("login_type") == "admin"){ ?>
                         <li class="active"><a href="<?php echo base_url();?>apanel/"><span class="menu-icon icon-speedometer"></span><p>Dashboard</p></a></li>
                               <li class="droplink">
                         	<a href="#">
@@ -31,7 +32,7 @@
                                
                             </ul>
                         </li>
-                        <?php if($this->session->userdata("login_type") == "admin"){ ?>
+                        
                        
                    
                       
@@ -91,6 +92,25 @@
                             </ul>
                         </li>
                         <?php } ?>
+                        <?php if($this->session->userdata("login_type") == "Accountant"){ ?>
+                         <li class="droplink"><a href="#"><span class="menu-icon icon-grid"></span><p>Sale</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="<?php echo base_url();?>home/saleProduct.jsp">Sale Product(Sale Invoice)</a></li>
+                                <li><a href="<?php echo base_url();?>home/saleProduct1.jsp">Sale Product (TEX Invoice)</a></li>
+                          
+                                <li><a href="<?php echo base_url();?>home/returnProduct.jsp">Return Product</a></li>
+                                <li><a href="<?php echo base_url();?>home/editBill.jsp">Edit Bill</a></li>
+                             
+                            </ul>
+                        </li>
+                        <li class="droplink"><a href="#"><span class="menu-icon icon-notebook"></span><p>DayBook</p><span class="arrow"></span></a>
+                            <ul class="sub-menu">
+                                <li><a href="<?php echo base_url();?>dayBook/dailyExpence.jsp">Daily Expence</a></li>
+                                <li><a href="<?php echo base_url();?>dayBook/dbook.jsp">DayBook Detail</a></li>
+                              
+                            </ul>
+                        </li>
+                        <?php }?>
                         <li class="droplink"><a href="#"><span class="menu-icon icon-globe"></span><p>Activity</p><span class="arrow"></span></a>
                             <ul class="sub-menu">
                                 <!--<li><a href="<?php echo base_url();?>web/query.jsp">Query/Contact List</a></li>-->

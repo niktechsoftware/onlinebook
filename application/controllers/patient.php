@@ -89,7 +89,7 @@ class Patient extends CI_Controller{
 					"weight" => $row->weight,
 					"bp_level" => $row->bp_level,
 					"detail" => $row->detail,
-					"Gst" =>$row->Gst
+					"Gst" =>$row->gst
 			);
 		}else{
 			$data = array(
@@ -363,14 +363,15 @@ class Patient extends CI_Controller{
 		$row1 = $this->db->get("patient");
 		if($row1->num_rows() > 0){
 			$list['info'] = $row1->row();
+			
 			$this->db->where("p_id",$id);
 			$a = $this->db->get("treatement");
-			// if($a->num_rows() > 0){
+			if($a->num_rows() > 0){
 				$list['is'] = true;
 				$list['row1'] = $a;
-			// }else{
-			// 	$list['is'] = false;
-			// }
+			}else{
+				$list['is'] = false;
+			}
 			
 			$this->load->view("ajax/pHistory",$list);
 		}
